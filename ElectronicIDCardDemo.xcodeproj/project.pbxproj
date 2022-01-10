@@ -13,9 +13,11 @@
 		3A10BCE9278BEBAF00E7BC23 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A10BCE7278BEBAF00E7BC23 /* Main.storyboard */; };
 		3A10BCEB278BEBB000E7BC23 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3A10BCEA278BEBB000E7BC23 /* Assets.xcassets */; };
 		3A10BCEE278BEBB000E7BC23 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A10BCEC278BEBB000E7BC23 /* LaunchScreen.storyboard */; };
+		BF78BAB9649E155F1F821434 /* Pods_ElectronicIDCardDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 587B8285E71AADC8873A9DAF /* Pods_ElectronicIDCardDemo.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		182B6866F9EDE8EF9AF5FEBC /* Pods-ElectronicIDCardDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ElectronicIDCardDemo.debug.xcconfig"; path = "Target Support Files/Pods-ElectronicIDCardDemo/Pods-ElectronicIDCardDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		3A10BCDE278BEBAF00E7BC23 /* ElectronicIDCardDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ElectronicIDCardDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A10BCE1278BEBAF00E7BC23 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3A10BCE3278BEBAF00E7BC23 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -24,6 +26,8 @@
 		3A10BCEA278BEBB000E7BC23 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3A10BCED278BEBB000E7BC23 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3A10BCEF278BEBB000E7BC23 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		587B8285E71AADC8873A9DAF /* Pods_ElectronicIDCardDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ElectronicIDCardDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B71A7269F86AED1249D9897A /* Pods-ElectronicIDCardDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ElectronicIDCardDemo.release.xcconfig"; path = "Target Support Files/Pods-ElectronicIDCardDemo/Pods-ElectronicIDCardDemo.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +35,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BF78BAB9649E155F1F821434 /* Pods_ElectronicIDCardDemo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -42,6 +47,8 @@
 			children = (
 				3A10BCE0278BEBAF00E7BC23 /* ElectronicIDCardDemo */,
 				3A10BCDF278BEBAF00E7BC23 /* Products */,
+				B5DA4985936B98C3857D3EC7 /* Pods */,
+				DC9A5D735438FDB64BABBA0E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -67,6 +74,24 @@
 			path = ElectronicIDCardDemo;
 			sourceTree = "<group>";
 		};
+		B5DA4985936B98C3857D3EC7 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				182B6866F9EDE8EF9AF5FEBC /* Pods-ElectronicIDCardDemo.debug.xcconfig */,
+				B71A7269F86AED1249D9897A /* Pods-ElectronicIDCardDemo.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		DC9A5D735438FDB64BABBA0E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				587B8285E71AADC8873A9DAF /* Pods_ElectronicIDCardDemo.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -74,9 +99,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3A10BCF2278BEBB000E7BC23 /* Build configuration list for PBXNativeTarget "ElectronicIDCardDemo" */;
 			buildPhases = (
+				9736EFC57C4E9B68CFA3D39F /* [CP] Check Pods Manifest.lock */,
 				3A10BCDA278BEBAF00E7BC23 /* Sources */,
 				3A10BCDB278BEBAF00E7BC23 /* Frameworks */,
 				3A10BCDC278BEBAF00E7BC23 /* Resources */,
+				81615DEC7C8F5BB73F947289 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -132,6 +159,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		81615DEC7C8F5BB73F947289 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ElectronicIDCardDemo/Pods-ElectronicIDCardDemo-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ElectronicIDCardDemo/Pods-ElectronicIDCardDemo-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ElectronicIDCardDemo/Pods-ElectronicIDCardDemo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9736EFC57C4E9B68CFA3D39F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ElectronicIDCardDemo-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		3A10BCDA278BEBAF00E7BC23 /* Sources */ = {
@@ -284,6 +353,7 @@
 		};
 		3A10BCF3278BEBB000E7BC23 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 182B6866F9EDE8EF9AF5FEBC /* Pods-ElectronicIDCardDemo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -313,6 +383,7 @@
 		};
 		3A10BCF4278BEBB000E7BC23 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B71A7269F86AED1249D9897A /* Pods-ElectronicIDCardDemo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
