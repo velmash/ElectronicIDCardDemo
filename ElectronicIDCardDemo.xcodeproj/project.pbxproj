@@ -13,6 +13,11 @@
 		3A10BCE9278BEBAF00E7BC23 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A10BCE7278BEBAF00E7BC23 /* Main.storyboard */; };
 		3A10BCEB278BEBB000E7BC23 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3A10BCEA278BEBB000E7BC23 /* Assets.xcassets */; };
 		3A10BCEE278BEBB000E7BC23 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A10BCEC278BEBB000E7BC23 /* LaunchScreen.storyboard */; };
+		3A10BCF6278BFC9D00E7BC23 /* ElectronicIDScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A10BCF5278BFC9D00E7BC23 /* ElectronicIDScrollView.swift */; };
+		3A10BCF9278BFD7C00E7BC23 /* MainIDView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A10BCF8278BFD7C00E7BC23 /* MainIDView.swift */; };
+		3A10BCFD278C066600E7BC23 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A10BCFC278C066600E7BC23 /* Constants.swift */; };
+		3A10BCFF278C095B00E7BC23 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A10BCFE278C095B00E7BC23 /* ProfileView.swift */; };
+		3A10BD02278C0EA900E7BC23 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A10BD01278C0EA900E7BC23 /* UIView+Extension.swift */; };
 		BF78BAB9649E155F1F821434 /* Pods_ElectronicIDCardDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 587B8285E71AADC8873A9DAF /* Pods_ElectronicIDCardDemo.framework */; };
 /* End PBXBuildFile section */
 
@@ -26,6 +31,11 @@
 		3A10BCEA278BEBB000E7BC23 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3A10BCED278BEBB000E7BC23 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3A10BCEF278BEBB000E7BC23 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3A10BCF5278BFC9D00E7BC23 /* ElectronicIDScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElectronicIDScrollView.swift; sourceTree = "<group>"; };
+		3A10BCF8278BFD7C00E7BC23 /* MainIDView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainIDView.swift; sourceTree = "<group>"; };
+		3A10BCFC278C066600E7BC23 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		3A10BCFE278C095B00E7BC23 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		3A10BD01278C0EA900E7BC23 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		587B8285E71AADC8873A9DAF /* Pods_ElectronicIDCardDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ElectronicIDCardDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B71A7269F86AED1249D9897A /* Pods-ElectronicIDCardDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ElectronicIDCardDemo.release.xcconfig"; path = "Target Support Files/Pods-ElectronicIDCardDemo/Pods-ElectronicIDCardDemo.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -66,6 +76,8 @@
 				3A10BCE1278BEBAF00E7BC23 /* AppDelegate.swift */,
 				3A10BCE3278BEBAF00E7BC23 /* SceneDelegate.swift */,
 				3A10BCE5278BEBAF00E7BC23 /* ViewController.swift */,
+				3A10BCFC278C066600E7BC23 /* Constants.swift */,
+				3A10BCF7278BFD0800E7BC23 /* IDCardViews */,
 				3A10BCE7278BEBAF00E7BC23 /* Main.storyboard */,
 				3A10BCEA278BEBB000E7BC23 /* Assets.xcassets */,
 				3A10BCEC278BEBB000E7BC23 /* LaunchScreen.storyboard */,
@@ -74,13 +86,39 @@
 			path = ElectronicIDCardDemo;
 			sourceTree = "<group>";
 		};
+		3A10BCF7278BFD0800E7BC23 /* IDCardViews */ = {
+			isa = PBXGroup;
+			children = (
+				3A10BCF8278BFD7C00E7BC23 /* MainIDView.swift */,
+				3A10BCF5278BFC9D00E7BC23 /* ElectronicIDScrollView.swift */,
+				3A10BCFA278C063000E7BC23 /* ScrollSubViews */,
+			);
+			path = IDCardViews;
+			sourceTree = "<group>";
+		};
+		3A10BCFA278C063000E7BC23 /* ScrollSubViews */ = {
+			isa = PBXGroup;
+			children = (
+				3A10BD00278C0E9700E7BC23 /* Extensions */,
+				3A10BCFE278C095B00E7BC23 /* ProfileView.swift */,
+			);
+			path = ScrollSubViews;
+			sourceTree = "<group>";
+		};
+		3A10BD00278C0E9700E7BC23 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				3A10BD01278C0EA900E7BC23 /* UIView+Extension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		B5DA4985936B98C3857D3EC7 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
 				182B6866F9EDE8EF9AF5FEBC /* Pods-ElectronicIDCardDemo.debug.xcconfig */,
 				B71A7269F86AED1249D9897A /* Pods-ElectronicIDCardDemo.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -207,8 +245,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3A10BCF9278BFD7C00E7BC23 /* MainIDView.swift in Sources */,
 				3A10BCE6278BEBAF00E7BC23 /* ViewController.swift in Sources */,
+				3A10BD02278C0EA900E7BC23 /* UIView+Extension.swift in Sources */,
 				3A10BCE2278BEBAF00E7BC23 /* AppDelegate.swift in Sources */,
+				3A10BCFD278C066600E7BC23 /* Constants.swift in Sources */,
+				3A10BCF6278BFC9D00E7BC23 /* ElectronicIDScrollView.swift in Sources */,
+				3A10BCFF278C095B00E7BC23 /* ProfileView.swift in Sources */,
 				3A10BCE4278BEBAF00E7BC23 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
