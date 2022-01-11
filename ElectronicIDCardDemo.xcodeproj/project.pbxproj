@@ -20,6 +20,9 @@
 		3A10BD02278C0EA900E7BC23 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A10BD01278C0EA900E7BC23 /* UIView+Extension.swift */; };
 		3A180D28278D122F008B8F08 /* QRView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A180D27278D122F008B8F08 /* QRView.swift */; };
 		3A180D2A278D132C008B8F08 /* QRCodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A180D29278D132C008B8F08 /* QRCodeView.swift */; };
+		3AAC83BA278D3C6800774C9B /* BaseScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AAC83B9278D3C6800774C9B /* BaseScrollView.swift */; };
+		3AAC83BC278D3C8700774C9B /* HorizontalScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AAC83BB278D3C8700774C9B /* HorizontalScrollView.swift */; };
+		3AAC83BE278D3C9A00774C9B /* SomeDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AAC83BD278D3C9A00774C9B /* SomeDataModel.swift */; };
 		BF78BAB9649E155F1F821434 /* Pods_ElectronicIDCardDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 587B8285E71AADC8873A9DAF /* Pods_ElectronicIDCardDemo.framework */; };
 /* End PBXBuildFile section */
 
@@ -40,6 +43,9 @@
 		3A10BD01278C0EA900E7BC23 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		3A180D27278D122F008B8F08 /* QRView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRView.swift; sourceTree = "<group>"; };
 		3A180D29278D132C008B8F08 /* QRCodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeView.swift; sourceTree = "<group>"; };
+		3AAC83B9278D3C6800774C9B /* BaseScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseScrollView.swift; sourceTree = "<group>"; };
+		3AAC83BB278D3C8700774C9B /* HorizontalScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizontalScrollView.swift; sourceTree = "<group>"; };
+		3AAC83BD278D3C9A00774C9B /* SomeDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SomeDataModel.swift; sourceTree = "<group>"; };
 		587B8285E71AADC8873A9DAF /* Pods_ElectronicIDCardDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ElectronicIDCardDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B71A7269F86AED1249D9897A /* Pods-ElectronicIDCardDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ElectronicIDCardDemo.release.xcconfig"; path = "Target Support Files/Pods-ElectronicIDCardDemo/Pods-ElectronicIDCardDemo.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -82,6 +88,7 @@
 				3A10BCE5278BEBAF00E7BC23 /* ViewController.swift */,
 				3A10BCFC278C066600E7BC23 /* Constants.swift */,
 				3A10BCF7278BFD0800E7BC23 /* IDCardViews */,
+				3A10BD00278C0E9700E7BC23 /* Extensions */,
 				3A10BCE7278BEBAF00E7BC23 /* Main.storyboard */,
 				3A10BCEA278BEBB000E7BC23 /* Assets.xcassets */,
 				3A10BCEC278BEBB000E7BC23 /* LaunchScreen.storyboard */,
@@ -95,6 +102,7 @@
 			children = (
 				3A10BCF8278BFD7C00E7BC23 /* MainIDView.swift */,
 				3A10BCF5278BFC9D00E7BC23 /* ElectronicIDScrollView.swift */,
+				3AAC83B8278D3C5400774C9B /* ScrollViewComponents */,
 				3A10BCFA278C063000E7BC23 /* ScrollSubViews */,
 			);
 			path = IDCardViews;
@@ -106,7 +114,6 @@
 				3A10BCFE278C095B00E7BC23 /* ProfileView.swift */,
 				3A180D27278D122F008B8F08 /* QRView.swift */,
 				3A180D29278D132C008B8F08 /* QRCodeView.swift */,
-				3A10BD00278C0E9700E7BC23 /* Extensions */,
 			);
 			path = ScrollSubViews;
 			sourceTree = "<group>";
@@ -117,6 +124,16 @@
 				3A10BD01278C0EA900E7BC23 /* UIView+Extension.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		3AAC83B8278D3C5400774C9B /* ScrollViewComponents */ = {
+			isa = PBXGroup;
+			children = (
+				3AAC83B9278D3C6800774C9B /* BaseScrollView.swift */,
+				3AAC83BB278D3C8700774C9B /* HorizontalScrollView.swift */,
+				3AAC83BD278D3C9A00774C9B /* SomeDataModel.swift */,
+			);
+			path = ScrollViewComponents;
 			sourceTree = "<group>";
 		};
 		B5DA4985936B98C3857D3EC7 /* Pods */ = {
@@ -251,10 +268,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3AAC83BE278D3C9A00774C9B /* SomeDataModel.swift in Sources */,
 				3A10BCF9278BFD7C00E7BC23 /* MainIDView.swift in Sources */,
+				3AAC83BC278D3C8700774C9B /* HorizontalScrollView.swift in Sources */,
 				3A10BCE6278BEBAF00E7BC23 /* ViewController.swift in Sources */,
 				3A180D2A278D132C008B8F08 /* QRCodeView.swift in Sources */,
 				3A10BD02278C0EA900E7BC23 /* UIView+Extension.swift in Sources */,
+				3AAC83BA278D3C6800774C9B /* BaseScrollView.swift in Sources */,
 				3A10BCE2278BEBAF00E7BC23 /* AppDelegate.swift in Sources */,
 				3A180D28278D122F008B8F08 /* QRView.swift in Sources */,
 				3A10BCFD278C066600E7BC23 /* Constants.swift in Sources */,

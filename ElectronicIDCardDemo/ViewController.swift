@@ -9,14 +9,12 @@ import UIKit
 import SnapKit
 
 class ViewController: UIViewController {
-    var idView = MainIDView()
-//    var profileView = ProfileView()
+    var mainIDCardView = MainIDView()
     
     @IBAction func doTestButtonTap(_ sender: Any) {
         // 서브 뷰 넣기
-        self.view.addSubview(idView)
-//        self.idView.scrollView.addSubview(profileView)
-        ttt()
+        self.view.addSubview(mainIDCardView)
+        setConstraints()
     }
     
     override func viewDidLoad() {
@@ -25,13 +23,10 @@ class ViewController: UIViewController {
         print("hi")
     }
     
-    func ttt() {
-        idView.snp.remakeConstraints {
+    func setConstraints() {
+        mainIDCardView.snp.remakeConstraints {
             $0.edges.equalToSuperview()
         }
-//        profileView.snp.remakeConstraints {
-//            $0.edges.equalToSuperview()
-//        }
     }
 }
 
