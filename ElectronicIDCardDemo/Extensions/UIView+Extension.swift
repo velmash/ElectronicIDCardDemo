@@ -13,6 +13,7 @@ extension UIView {
             $0.text = sentence
             $0.font = .systemFont(ofSize: 30, weight: .bold)
             $0.numberOfLines = 0
+            $0.textAlignment = .center
             $0.lineBreakMode = .byWordWrapping
         }
     }
@@ -48,5 +49,13 @@ extension UIView {
         let qrView = QRCodeView()
         qrView.generateCode(code)
         return qrView
+    }
+    
+    func createStackView() -> UIStackView {
+        return UIStackView().then {
+            $0.alignment = .fill
+            $0.axis = .horizontal
+            $0.backgroundColor = .orange
+        }
     }
 }

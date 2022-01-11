@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Combine
 import SnapKit
 
 class QRView: UIView {
@@ -28,6 +29,8 @@ class QRView: UIView {
     private func setView() {
         addSubviews()
         setConstraints()
+        
+                
     }
     
     private func addSubviews() {
@@ -65,6 +68,7 @@ class QRView: UIView {
         progressBar.snp.remakeConstraints {
             $0.centerX.equalToSuperview()
             $0.width.equalTo(qrView.snp.width)
+            $0.height.equalTo(30)
             $0.top.equalTo(timeDescriptionLabel.snp.bottom).offset(20)
         }
     }

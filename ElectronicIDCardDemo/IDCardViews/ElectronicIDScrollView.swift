@@ -6,56 +6,23 @@
 //
 
 import UIKit
+import Combine
 import SnapKit
 
-class ElectronicScrollView: UIScrollView, UIScrollViewDelegate {
+class ElectronicIDScrollView: UIScrollView {
+    let pageCount = CurrentValueSubject<Int?, Never>(nil)
     
-    struct InnerViewType {
-        enum ViewType: String {
-            case profile
-            case QR
-        }
-        
-        let type: ViewType
-        
-        var name: String {
-            return type.rawValue
-        }
-        
-        var view: UIView {
-            switch type {
-            case .profile: return ProfileView()
-            case .QR: return QRView()
-            }
-        }
+    static func instance() -> ElectronicIDScrollView {
+        return ElectronicIDScrollView()
     }
     
-    struct Mocks {
-        static func getDataSource() -> [InnerViewType] {
-            return [InnerViewType(type: .profile),
-                    InnerViewType(type: .QR)]
-        }
-    }
-    
-    private lazy var stackView: UIStackView = {
-        let view = UIStackView()
-        view.axis = .horizontal
-        view.spacing = 16.0
-        view.backgroundColor = .separator
-        
-        return view
-    }()
-    
-    var dataSource: [InnerViewType]? {
-        didSet { bind() }
-    }
+    lazy var stackView = createStackView()
+    private let components = [ProfileView(), QRView()]
     
     override init(frame: CGRect) {
         super.init(frame: frame)
         
         configure()
-        bind()
-        //        self.backgroundColor = .black
     }
     
     required init?(coder: NSCoder) {
@@ -65,25 +32,21 @@ class ElectronicScrollView: UIScrollView, UIScrollViewDelegate {
     func configure() {
         showsHorizontalScrollIndicator = false
         bounces = false
+        self.isPagingEnabled = true
         
         addSubview(stackView)
         stackView.snp.makeConstraints { make in
-            make.leading.trailing.equalToSuperview() /// 이 값이 없으면 scroll 안되는 것 주의
-            make.top.bottom.equalToSuperview()
+            make.edges.equalToSuperview()
+            make.height.equalTo(self.snp.height).multipliedBy(1)
         }
-    }
-    
-    func bind() {
-        dataSource?.forEach { ds in
-            stackView.addArrangedSubview(ds.view)
-            stackView.addArrangedSubview(ds.view)
-            ds.view.snp.makeConstraints { make in
-                make.height.equalTo(42)
+        
+        for view in components {
+            stackView.addArrangedSubview(view)
+            view.snp.remakeConstraints {
+                $0.width.equalTo(300)
             }
         }
+        
+        self.pageCount.send(components.count)
     }
-}
-
-extension UIScrollViewDelegate {
-    
 }

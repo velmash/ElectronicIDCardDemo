@@ -6,35 +6,41 @@
 //
 
 import UIKit
+import Combine
 import SnapKit
 import Then
 
 class MainIDView: UIView {
-    lazy var backButton = createBackButtion()
-//    lazy var scrollView: HorizontalScrollView = {
-//        let view = HorizontalScrollView()
-//
-//        return view
-//    }()
-    lazy var scrollView = HorizontalScrollView.instance()
+    private var bag = Set<AnyCancellable>()
+    private var pageControlFlag: CGFloat = 1
     
+    lazy var backButton = createBackButtion()
+    lazy var scrollView = ElectronicIDScrollView.instance()
     lazy var pageControl = UIPageControl()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
         
         setView()
+        pageBinding()
+        scrollView.delegate = self
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
+    func pageBinding() {
+        // PageControl
+        scrollView.pageCount
+            .sink { [weak self] count in
+                self?.pageControl.numberOfPages = count ?? 0
+            }
+            .store(in: &bag)
+    }
+    
     func setView() {
         self.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.2)
-        pageControl.numberOfPages = scrollView.dataSource?.count ?? 0
-        print("SDHIFS", scrollView.dataSource?.count)
-        insertDataSource()
         
         addSubviews()
         setConstraints()
@@ -64,18 +70,17 @@ class MainIDView: UIView {
             $0.centerX.equalToSuperview()
             $0.top.equalTo(scrollView.snp.bottom)
         }
-        
-//        self.profileView.snp.remakeConstraints {
-//            $0.edges.equalToSuperview()
-//        }
-        
-//        self.qrView.snp.remakeConstraints {
-//            $0.edges.equalToSuperview()
-//        }
     }
-    
-    private func insertDataSource() {
-        scrollView.dataSource = Mocks.getDataSource()
+}
+
+extension MainIDView: UIScrollViewDelegate {
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        if pageControlFlag < scrollView.contentOffset.x {
+            pageControl.currentPage += 1
+        } else {
+            pageControl.currentPage -= 1
+        }
+        pageControlFlag = scrollView.contentOffset.x
     }
 }
 
