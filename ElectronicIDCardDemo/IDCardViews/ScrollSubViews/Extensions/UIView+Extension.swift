@@ -11,7 +11,7 @@ extension UIView {
     func createTitleLabel(_ sentence: String) -> UILabel {
         return UILabel().then {
             $0.text = sentence
-            $0.font = .systemFont(ofSize: 20, weight: .bold)
+            $0.font = .systemFont(ofSize: 30, weight: .bold)
             $0.numberOfLines = 0
             $0.lineBreakMode = .byWordWrapping
         }

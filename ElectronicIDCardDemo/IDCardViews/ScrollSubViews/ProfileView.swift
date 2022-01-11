@@ -44,7 +44,9 @@ class ProfileView: UIView {
     func setConstraints() {
         title.snp.remakeConstraints {
             $0.centerX.equalToSuperview()
-            $0.top.equalToSuperview().offset(30)
+            $0.width.equalTo(150)
+            $0.height.equalTo(40)
+            $0.top.equalToSuperview().offset(25)
         }
         
         companyMark.snp.remakeConstraints {
@@ -59,6 +61,24 @@ class ProfileView: UIView {
             $0.height.equalTo(150)
             $0.centerX.equalToSuperview()
             $0.top.equalTo(companyMark.snp.bottom)
+        }
+        
+        department.snp.remakeConstraints {
+            $0.centerX.equalToSuperview()
+            $0.size.equalTo(companyMark)
+            $0.top.equalTo(profilePhoto.snp.bottom).offset(10)
+        }
+        
+        name.snp.remakeConstraints {
+            $0.centerX.equalToSuperview()
+            $0.size.equalTo(title)
+            $0.top.equalTo(department.snp.bottom).offset(10)
+        }
+        
+        certificationLabel.snp.remakeConstraints {
+            $0.centerX.equalToSuperview()
+            $0.size.equalTo(department)
+            $0.top.equalTo(name.snp.bottom)
         }
     }
 }
