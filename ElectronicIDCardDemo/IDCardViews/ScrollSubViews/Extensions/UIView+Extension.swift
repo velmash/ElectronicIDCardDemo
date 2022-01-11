@@ -43,4 +43,10 @@ extension UIView {
         // 현재는 임시
         return createTitleLabel("방유라")
     }
+    
+    func createQRView(code: String) -> UIView {
+        let qrView = QRCodeView()
+        qrView.generateCode(code)
+        return qrView
+    }
 }

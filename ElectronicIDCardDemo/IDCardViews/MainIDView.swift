@@ -15,41 +15,42 @@ class MainIDView: UIView {
     lazy var pageControl = UIPageControl()
     
     var profileView = ProfileView()
-    var views = [UIView]()
+    var qrView = QRView()
+//    var views = [UIView]()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        views = [profileView, profileView, profileView]
+//        views = [profileView, profileView, profileView]
         
         setView()
         
-        test()
+//        test()
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
-    func test() {
-        scrollView.backgroundColor = .blue
-        scrollView.isPagingEnabled = true
-        
-        let numberOfPages :Int = 2
-        let padding : CGFloat = 15
-        let viewWidth = self.frame.size.width - 2 * padding
-        let viewHeight = self.frame.size.height - 2 * padding
-        
-        var x : CGFloat = 0
-
-        for i in 0...numberOfPages{
-            var view: UIView = UIView(frame: CGRect(x: x + padding, y: padding, width: viewWidth, height: viewHeight))
-            view = views[i]
-            scrollView .addSubview(view)
-            x = view.frame.origin.x + viewWidth + padding
-        }
-
-        scrollView.contentSize = CGSize(width:x+padding, height:scrollView.frame.size.height)
-    }
+//
+//    func test() {
+//        scrollView.backgroundColor = .blue
+//        scrollView.isPagingEnabled = true
+//
+//        let numberOfPages :Int = 2
+//        let padding : CGFloat = 15
+//        let viewWidth = self.frame.size.width - 2 * padding
+//        let viewHeight = self.frame.size.height - 2 * padding
+//
+//        var x : CGFloat = 0
+//
+//        for i in 0...numberOfPages{
+//            var view: UIView = UIView(frame: CGRect(x: x + padding, y: padding, width: viewWidth, height: viewHeight))
+//            view = views[i]
+//            scrollView .addSubview(view)
+//            x = view.frame.origin.x + viewWidth + padding
+//        }
+//
+//        scrollView.contentSize = CGSize(width:x+padding, height:scrollView.frame.size.height)
+//    }
     
     func setView() {
         self.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.2)
@@ -62,6 +63,8 @@ class MainIDView: UIView {
         self.addSubview(scrollView)
         self.addSubview(backButton)
         self.addSubview(pageControl)
+//        scrollView.addSubview(profileView)
+        scrollView.addSubview(qrView)
     }
     
     func setConstraints() {
@@ -81,6 +84,14 @@ class MainIDView: UIView {
         self.pageControl.snp.remakeConstraints {
             $0.centerX.equalToSuperview()
             $0.top.equalTo(scrollView.snp.bottom)
+        }
+        
+//        self.profileView.snp.remakeConstraints {
+//            $0.edges.equalToSuperview()
+//        }
+        
+        self.qrView.snp.remakeConstraints {
+            $0.edges.equalToSuperview()
         }
     }
 }

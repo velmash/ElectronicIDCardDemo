@@ -7,7 +7,6 @@
 
 import UIKit
 import SnapKit
-import Then
 
 class ProfileView: UIView {
     lazy var title = createTitleLabel("전자사원증")
@@ -27,12 +26,12 @@ class ProfileView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func setView() {
+    private func setView() {
         addSubviews()
         setConstraints()
     }
     
-    func addSubviews() {
+    private func addSubviews() {
         self.addSubview(title)
         self.addSubview(companyMark)
         self.addSubview(profilePhoto)
@@ -41,7 +40,7 @@ class ProfileView: UIView {
         self.addSubview(certificationLabel)
     }
     
-    func setConstraints() {
+    private func setConstraints() {
         title.snp.remakeConstraints {
             $0.centerX.equalToSuperview()
             $0.width.equalTo(150)
