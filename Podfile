@@ -8,5 +8,5 @@ target 'ElectronicIDCardDemo' do
   # Pods for ElectronicIDCardDemo
   pod 'SnapKit'
   pod 'Then'
-
+  pod 'CombineCocoa'
 end

@@ -10,6 +10,8 @@ import Combine
 import SnapKit
 
 class QRView: UIView {
+    private var bag = Set<AnyCancellable>()
+    
     lazy var title = createTitleLabel("출퇴근 체크 QR")
     lazy var descriptionLabel = createLabel("근태기에 QR코드를 인식해주세요.")
     lazy var qrView = createQRView(code: "TEST")
@@ -21,6 +23,7 @@ class QRView: UIView {
         
         setView()
     }
+
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
@@ -29,8 +32,6 @@ class QRView: UIView {
     private func setView() {
         addSubviews()
         setConstraints()
-        
-                
     }
     
     private func addSubviews() {
@@ -73,10 +74,6 @@ class QRView: UIView {
         }
     }
     
-    private func createProgressBar() -> UIProgressView {
-        return UIProgressView().then {
-            $0.progressViewStyle = .default
-        }
-    }
+    
 }
 

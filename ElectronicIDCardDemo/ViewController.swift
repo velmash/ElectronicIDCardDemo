@@ -9,10 +9,11 @@ import UIKit
 import SnapKit
 
 class ViewController: UIViewController {
-    var mainIDCardView = MainIDView()
+    var mainIDCardView: MainIDView!
     
     @IBAction func doTestButtonTap(_ sender: Any) {
         // 서브 뷰 넣기
+        mainIDCardView = MainIDView()
         self.view.addSubview(mainIDCardView)
         setConstraints()
     }

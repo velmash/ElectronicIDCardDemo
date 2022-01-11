@@ -7,11 +7,13 @@
 
 import UIKit
 import Combine
+import CombineCocoa
 import SnapKit
 import Then
 
 class MainIDView: UIView {
     private var bag = Set<AnyCancellable>()
+    private let triggerSubject = PassthroughSubject<Void, Never>()
     private var pageControlFlag: CGFloat = 1
     
     lazy var backButton = createBackButtion()
@@ -37,6 +39,41 @@ class MainIDView: UIView {
                 self?.pageControl.numberOfPages = count ?? 0
             }
             .store(in: &bag)
+        
+        
+        // 수정중
+        pageControl.currentPagePublisher
+            .sink { [weak self] pageNum in
+                if 1 == pageNum {
+                    self?.triggerSubject.send(())
+                }
+            }
+            .store(in: &bag)
+        
+        triggerSubject
+            .sink {
+                let timer = Timer
+                    .publish(every: 1.0, on: .main, in: .common)
+                    .autoconnect()
+
+                var counter = 0
+                let subscriber = timer
+                    .map({ (date) -> Void in
+                        counter += 1
+                    })
+                    .sink { _ in
+
+                        print("I am printing the counter \(counter)")
+                        if counter >= 5 {
+                            print("greater than 5")
+                            timer.upstream.connect().cancel()
+
+                        }
+                    }
+            }
+            .store(in: &bag)
+        
+        
     }
     
     func setView() {

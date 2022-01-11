@@ -10,6 +10,7 @@ import Combine
 import SnapKit
 
 class ElectronicIDScrollView: UIScrollView {
+    private var bag = Set<AnyCancellable>()
     let pageCount = CurrentValueSubject<Int?, Never>(nil)
     
     static func instance() -> ElectronicIDScrollView {

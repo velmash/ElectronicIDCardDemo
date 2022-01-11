@@ -45,6 +45,12 @@ extension UIView {
         return createTitleLabel("방유라")
     }
     
+    func createProgressBar() -> UIProgressView {
+        return UIProgressView().then {
+            $0.progressViewStyle = .default
+        }
+    }
+    
     func createQRView(code: String) -> UIView {
         let qrView = QRCodeView()
         qrView.generateCode(code)
