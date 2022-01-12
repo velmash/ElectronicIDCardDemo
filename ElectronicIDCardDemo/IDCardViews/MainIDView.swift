@@ -17,7 +17,7 @@ class MainIDView: UIView {
     
     private var bag = Set<AnyCancellable>()
     private let countTriggerSubject = PassthroughSubject<Void, Never>()
-    private let remainTimeeSubject = CurrentValueSubject<Int, Never>(4)
+    private let remainTimeeSubject = PassthroughSubject<Double, Never>()
     private var pageControlFlag: CGFloat = 1
     
     lazy var backButton = createBackButtion()
@@ -61,14 +61,14 @@ class MainIDView: UIView {
             }
             .store(in: &bag)
         
-        let calcTime = Double(self.remainTime + 1)
+        let calcTime = Double(self.remainTime)
         remainTimeeSubject
             .sink { [weak self] countdown in
                 guard let self = self else { return }
-                self.scrollView.qrView.test.text = "\(countdown)초 남음"
+                self.scrollView.qrView.test.text = "\(Int(countdown))초 남음"
                 let calcCountdonw = Double(countdown)
                 self.scrollView.qrView.progressBar.progress = Float(calcCountdonw/calcTime)
-                print(self.scrollView.qrView.progressBar.progress)
+//                print(self.scrollView.qrView.progressBar.progress)
             }
             .store(in: &bag)
     }
@@ -139,18 +139,19 @@ extension MainIDView {
             timer!.invalidate()
         }
         
-        timer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(timerCallback), userInfo: nil, repeats: true)
+        timer = Timer.scheduledTimer(timeInterval: 0.01, target: self, selector: #selector(timerCallback), userInfo: nil, repeats: true)
     }
     
     @objc func timerCallback() {
-        if(remainTime == Double(0.0)) {
+        print("HI?", remainTime)
+        if(remainTime < Double(0.0)) {
             timer?.invalidate()
             timer = nil
             
             // 타이머 종료후 처리
             print("end Timer")
         }
-        self.remainTimeeSubject.send(Int(remainTime))
-        remainTime -= Double(0.1)
+        self.remainTimeeSubject.send((remainTime))
+        remainTime -= Double(0.01)
     }
 }
