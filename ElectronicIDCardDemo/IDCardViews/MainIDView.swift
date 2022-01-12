@@ -57,6 +57,7 @@ class MainIDView: UIView {
             .store(in: &bag)
         
         countTriggerSubject
+            .print("???HSDKJHFLKSJDKLF")
             .sink {
                 self.startTimer()
             }
@@ -67,10 +68,11 @@ class MainIDView: UIView {
             .sink { [weak self] countdown in
                 guard let self = self else { return }
                 
-                self.scrollView.qrView.test.text = "\(Int(countdown) + 1)초 남음"
+                self.scrollView.qrView.remainTimeLabel.text = "\(Int(countdown) + 1)초 남음"
                 
                 let calcCountdonw = Double(countdown)
                 self.scrollView.qrView.progressBar.progress = Float(calcCountdonw/calcTime)
+                print(countdown)
                 
                 // 타이머 종료후 처리
                 if(countdown < Double(0.0)) {
@@ -85,8 +87,16 @@ class MainIDView: UIView {
         
         countDoneSubject
             .sink { [weak self] _ in
-                self?.scrollView.qrView.test.text = "0초 남음"
+                self?.scrollView.qrView.remainTimeLabel.text = "0초 남음"
                 //TODO: 다시하기 버튼 띄우기
+                self?.scrollView.qrView.restartQRButton.isHidden = false
+            }
+            .store(in: &bag)
+        
+        self.scrollView.qrView.restartQRButton.tapPublisher
+            .sink { [weak self] in
+                self?.scrollView.qrView.restartQRButton.isHidden = true
+//                self?.countTriggerSubject.send(())
             }
             .store(in: &bag)
     }

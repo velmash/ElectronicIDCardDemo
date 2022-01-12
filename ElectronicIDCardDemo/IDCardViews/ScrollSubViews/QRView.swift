@@ -13,14 +13,21 @@ class QRView: UIView {
     static func instance() -> QRView {
         return QRView()
     }
-    private var bag = Set<AnyCancellable>()
     
     lazy var title = createTitleLabel("출퇴근 체크 QR")
     lazy var descriptionLabel = createLabel("근태기에 QR코드를 인식해주세요.")
     lazy var qrView = createQRView(code: "TEST")
+    lazy var timeContainerView = UIView()
+    lazy var timeSpacingView = UIView()
     lazy var timeDescriptionLabel = createLabel("남은 시간 ")
-    lazy var test = createLabel("")
+    lazy var remainTimeLabel = createLabel("")
     lazy var progressBar = createProgressBar()
+    
+    lazy var restartQRButton = UIButton().then {
+        $0.isHidden = true
+        $0.backgroundColor = .green
+        $0.alpha = 0.5
+    }
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -41,10 +48,14 @@ class QRView: UIView {
         self.addSubview(title)
         self.addSubview(descriptionLabel)
         self.addSubview(qrView)
-        self.addSubview(timeDescriptionLabel)
+        self.addSubview(restartQRButton)
+        self.addSubview(timeContainerView)
+        timeContainerView.addSubview(timeSpacingView)
+        timeContainerView.addSubview(timeDescriptionLabel)
+        timeContainerView.addSubview(remainTimeLabel)
         self.addSubview(progressBar)
-        self.addSubview(test)
-        test.textColor = .blue
+        
+        remainTimeLabel.textColor = .blue
     }
     
     private func setConstraints() {
@@ -65,15 +76,30 @@ class QRView: UIView {
             $0.centerX.equalToSuperview()
             $0.top.equalTo(descriptionLabel.snp.bottom).offset(20)
         }
-
-        timeDescriptionLabel.snp.remakeConstraints {
+        
+        restartQRButton.snp.remakeConstraints {
+            $0.edges.equalTo(qrView)
+        }
+        
+        timeContainerView.snp.remakeConstraints {
             $0.centerX.equalTo(title)
             $0.top.equalTo(qrView.snp.bottom).offset(20)
         }
         
-        test.snp.remakeConstraints {
-            $0.top.bottom.equalTo(timeDescriptionLabel)
-            $0.leading.equalTo(timeDescriptionLabel.snp.trailing)
+        timeSpacingView.snp.remakeConstraints {
+            $0.centerX.equalTo(title)
+            $0.top.bottom.equalToSuperview()
+            $0.width.equalTo(5)
+        }
+
+        timeDescriptionLabel.snp.remakeConstraints {
+            $0.leading.top.bottom.equalToSuperview()
+            $0.trailing.equalTo(timeSpacingView.snp.leading)
+        }
+        
+        remainTimeLabel.snp.remakeConstraints {
+            $0.trailing.top.bottom.equalToSuperview()
+            $0.leading.equalTo(timeSpacingView.snp.trailing)
         }
 
         progressBar.snp.remakeConstraints {
