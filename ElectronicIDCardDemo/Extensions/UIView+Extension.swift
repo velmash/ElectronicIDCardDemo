@@ -64,4 +64,12 @@ extension UIView {
             $0.backgroundColor = .orange
         }
     }
+    
+    func createButton(name: String) -> UIButton {
+        return UIButton().then {
+            $0.setTitle(name, for: .normal)
+            $0.setTitleColor(.white, for: .normal)
+            $0.backgroundColor = .blue
+        }
+    }
 }

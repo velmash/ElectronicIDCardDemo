@@ -20,13 +20,14 @@ class ElectronicIDScrollView: UIScrollView {
     lazy var stackView = createStackView()
     let profileView = ProfileView.instance()
     let qrView = QRView.instance()
+    let workCommutingView = WorkCommutingView.instance()
     
     private var components = [UIView]()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-        self.components = [profileView, qrView]
+        self.components = [profileView, qrView, workCommutingView]
         configure()
     }
     
