@@ -9,6 +9,9 @@ import UIKit
 import SnapKit
 
 class ProfileView: UIView {
+    static func instance() -> ProfileView {
+        return ProfileView()
+    }
     lazy var title = createTitleLabel("전자사원증")
     lazy var companyMark = createCompanyMark() 
     lazy var profilePhoto = createCompanyMark()

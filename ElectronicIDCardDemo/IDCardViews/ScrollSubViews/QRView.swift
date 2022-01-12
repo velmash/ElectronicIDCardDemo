@@ -10,12 +10,16 @@ import Combine
 import SnapKit
 
 class QRView: UIView {
+    static func instance() -> QRView {
+        return QRView()
+    }
     private var bag = Set<AnyCancellable>()
     
     lazy var title = createTitleLabel("출퇴근 체크 QR")
     lazy var descriptionLabel = createLabel("근태기에 QR코드를 인식해주세요.")
     lazy var qrView = createQRView(code: "TEST")
-    lazy var timeDescriptionLabel = createLabel("남은 시간@@@@@@@@@@@@@@@")
+    lazy var timeDescriptionLabel = createLabel("남은 시간 ")
+    lazy var test = createLabel("")
     lazy var progressBar = createProgressBar()
     
     override init(frame: CGRect) {
@@ -23,7 +27,6 @@ class QRView: UIView {
         
         setView()
     }
-
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
@@ -40,6 +43,8 @@ class QRView: UIView {
         self.addSubview(qrView)
         self.addSubview(timeDescriptionLabel)
         self.addSubview(progressBar)
+        self.addSubview(test)
+        test.textColor = .blue
     }
     
     private func setConstraints() {
@@ -64,6 +69,11 @@ class QRView: UIView {
         timeDescriptionLabel.snp.remakeConstraints {
             $0.centerX.equalTo(title)
             $0.top.equalTo(qrView.snp.bottom).offset(20)
+        }
+        
+        test.snp.remakeConstraints {
+            $0.top.bottom.equalTo(timeDescriptionLabel)
+            $0.leading.equalTo(timeDescriptionLabel.snp.trailing)
         }
 
         progressBar.snp.remakeConstraints {

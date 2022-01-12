@@ -12,8 +12,12 @@ import SnapKit
 import Then
 
 class MainIDView: UIView {
+    var timer: Timer?
+    var remainTime: Double = 3
+    
     private var bag = Set<AnyCancellable>()
-    private let triggerSubject = PassthroughSubject<Void, Never>()
+    private let countTriggerSubject = PassthroughSubject<Void, Never>()
+    private let remainTimeeSubject = CurrentValueSubject<Int, Never>(4)
     private var pageControlFlag: CGFloat = 1
     
     lazy var backButton = createBackButtion()
@@ -42,38 +46,31 @@ class MainIDView: UIView {
         
         
         // 수정중
+        // trigger에 보내는 방식으로 reload 버튼 기능도 구현
         pageControl.currentPagePublisher
             .sink { [weak self] pageNum in
                 if 1 == pageNum {
-                    self?.triggerSubject.send(())
+                    self?.countTriggerSubject.send(())
                 }
             }
             .store(in: &bag)
         
-        triggerSubject
+        countTriggerSubject
             .sink {
-                let timer = Timer
-                    .publish(every: 1.0, on: .main, in: .common)
-                    .autoconnect()
-
-                var counter = 0
-                let subscriber = timer
-                    .map({ (date) -> Void in
-                        counter += 1
-                    })
-                    .sink { _ in
-
-                        print("I am printing the counter \(counter)")
-                        if counter >= 5 {
-                            print("greater than 5")
-                            timer.upstream.connect().cancel()
-
-                        }
-                    }
+                self.startTimer()
             }
             .store(in: &bag)
         
-        
+        let calcTime = Double(self.remainTime + 1)
+        remainTimeeSubject
+            .sink { [weak self] countdown in
+                guard let self = self else { return }
+                self.scrollView.qrView.test.text = "\(countdown)초 남음"
+                let calcCountdonw = Double(countdown)
+                self.scrollView.qrView.progressBar.progress = Float(calcCountdonw/calcTime)
+                print(self.scrollView.qrView.progressBar.progress)
+            }
+            .store(in: &bag)
     }
     
     func setView() {
@@ -133,5 +130,27 @@ extension MainIDView {
     
     @objc func removeIDCardView() {
         self.removeFromSuperview()
+    }
+}
+
+extension MainIDView {
+    public func startTimer() {
+        if timer != nil && timer!.isValid {
+            timer!.invalidate()
+        }
+        
+        timer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(timerCallback), userInfo: nil, repeats: true)
+    }
+    
+    @objc func timerCallback() {
+        if(remainTime == Double(0.0)) {
+            timer?.invalidate()
+            timer = nil
+            
+            // 타이머 종료후 처리
+            print("end Timer")
+        }
+        self.remainTimeeSubject.send(Int(remainTime))
+        remainTime -= Double(0.1)
     }
 }
