@@ -45,9 +45,6 @@ class MainIDView: UIView {
             }
             .store(in: &bag)
         
-        
-        // 수정중
-        // trigger에 보내는 방식으로 reload 버튼 기능도 구현
         pageControl.currentPagePublisher
             .sink { [weak self] pageNum in
                 if 1 == pageNum {
@@ -57,10 +54,7 @@ class MainIDView: UIView {
             .store(in: &bag)
         
         countTriggerSubject
-            .print("???HSDKJHFLKSJDKLF")
-            .sink {
-                self.startTimer()
-            }
+            .sink { self.startTimer() }
             .store(in: &bag)
         
         let calcTime = Double(self.remainTime)
@@ -72,7 +66,6 @@ class MainIDView: UIView {
                 
                 let calcCountdonw = Double(countdown)
                 self.scrollView.qrView.progressBar.progress = Float(calcCountdonw/calcTime)
-                print(countdown)
                 
                 // 타이머 종료후 처리
                 if(countdown < Double(0.0)) {
@@ -88,7 +81,6 @@ class MainIDView: UIView {
         countDoneSubject
             .sink { [weak self] _ in
                 self?.scrollView.qrView.remainTimeLabel.text = "0초 남음"
-                //TODO: 다시하기 버튼 띄우기
                 self?.scrollView.qrView.restartQRButton.isHidden = false
             }
             .store(in: &bag)
@@ -96,7 +88,9 @@ class MainIDView: UIView {
         self.scrollView.qrView.restartQRButton.tapPublisher
             .sink { [weak self] in
                 self?.scrollView.qrView.restartQRButton.isHidden = true
-//                self?.countTriggerSubject.send(())
+                
+                self?.remainTime = 3
+                self?.countTriggerSubject.send(())
             }
             .store(in: &bag)
     }
