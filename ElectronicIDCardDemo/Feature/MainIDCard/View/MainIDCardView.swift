@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Then
 
 class MainIDCardView: BaseView {
     
@@ -14,18 +15,14 @@ class MainIDCardView: BaseView {
         $0.backgroundColor = .yellow
     }
     
-    lazy var pageControl: UIPageControl = {
-        let control = UIPageControl()
-        control.currentPageIndicatorTintColor = UIColor.white
-        control.pageIndicatorTintColor = UIColor.white.withAlphaComponent(0.36)
-        return control
-    }()
+    lazy var pageControl = UIPageControl().then {
+        $0.currentPageIndicatorTintColor = UIColor.white
+        $0.pageIndicatorTintColor = UIColor.white.withAlphaComponent(0.36)
+    }
     
-    var pageContainerView: UIView = {
-        let view = UIView()
-        view.backgroundColor = UIColor(red: 1, green: 1, blue: 1, alpha: 0.2)
-        return view
-    }()
+    var pageContainerView = UIView().then {
+        $0.backgroundColor = UIColor(red: 1, green: 1, blue: 1, alpha: 0.2)
+    }
     
     override func setupSubviews() {
         super.setupSubviews()
