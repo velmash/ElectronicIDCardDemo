@@ -28,6 +28,7 @@ class MainIDCardViewController: BaseViewController<MainIDCardView> {
         setupPageController()
         setupPageControl()
         setupButton()
+        setupToast()
     }
     
     
@@ -49,6 +50,14 @@ class MainIDCardViewController: BaseViewController<MainIDCardView> {
     func setupButton() {
         myView.backButton.tapPublisher
             .sink { self.dismiss(animated: false, completion: nil) }
+            .store(in: &bag)
+    }
+    
+    func setupToast() {
+        workCommutingVC.toastViewTrigger
+            .sink { [weak self] in
+                self?.showToast(message: "이미 출근시간이 등록되었습니다.", font: .systemFont(ofSize: 14))
+            }
             .store(in: &bag)
     }
 }

@@ -52,8 +52,7 @@ extension WorkCommutingViewController {
                 if self.myView.commutingReportView.onTimeDetail.text == "미등록" {
                     self.myView.commutingReportView.onTimeDetail.text = self.getTimeNow(.normal)
                 } else {
-                    // 토스트뷰 띄우기
-                    print("zz")
+                    self.toastViewTrigger.send(())
                 }
                
             } else {

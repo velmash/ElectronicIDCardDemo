@@ -11,6 +11,8 @@ import CombineCocoa
 
 class WorkCommutingViewController: BaseViewController<WorkCommutingView> {
     
+    let toastViewTrigger = PassthroughSubject<Void, Never>()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
