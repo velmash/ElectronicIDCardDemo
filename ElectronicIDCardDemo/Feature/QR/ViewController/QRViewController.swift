@@ -31,6 +31,9 @@ class QRViewController: BaseViewController<QRView> {
     override func pageBinding() {
         // start timer after trriger
         countTriggerSubject
+            // 여기에 qr 새로만드는 로직도 추가
+            // 여기또는 타이머에 또는 새로운 Subject에 반응형으로
+//        myView.qrView.createQRView(code: 여기에 함수화 된 뭐 코드 ---),,,, 방법 여러가지
             .sink { self.startTimer() }
             .store(in: &bag)
         

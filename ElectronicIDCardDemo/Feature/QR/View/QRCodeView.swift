@@ -26,6 +26,7 @@ class QRCodeView: UIView {
         imageView.frame = bounds
     }
     
+    // 여기서 qr코드 생성하는 로직 추가
     func generateCode(_ string: String) {
         guard let filter = filter,
               let data = string.data(using: .isoLatin1, allowLossyConversion: false) else {
