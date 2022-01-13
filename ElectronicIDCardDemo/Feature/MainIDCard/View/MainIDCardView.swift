@@ -9,7 +9,10 @@ import UIKit
 
 class MainIDCardView: BaseView {
     
-    lazy var backButton = createBackButtion()
+    lazy var backButton = createButton(name: "X").then {
+        $0.setTitleColor(.black, for: .normal)
+        $0.backgroundColor = .yellow
+    }
     
     lazy var pageControl: UIPageControl = {
         let control = UIPageControl()
@@ -51,16 +54,6 @@ class MainIDCardView: BaseView {
         self.pageControl.snp.remakeConstraints {
             $0.centerX.equalToSuperview()
             $0.top.equalTo(pageContainerView.snp.bottom)
-        }
-    }
-}
-
-extension MainIDCardView {
-    private func createBackButtion() -> UIButton {
-        return UIButton().then {
-            $0.setTitle("X", for: .normal)
-            $0.setTitleColor(.black, for: .normal)
-            $0.backgroundColor = .yellow
         }
     }
 }
