@@ -9,4 +9,6 @@ target 'ElectronicIDCardDemo' do
   pod 'SnapKit'
   pod 'Then'
   pod 'CombineCocoa'
+  pod 'Swinject'
+
 end
