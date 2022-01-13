@@ -9,10 +9,8 @@ import UIKit
 import Combine
 import SnapKit
 
-class QRView: UIView {
-    static func instance() -> QRView {
-        return QRView()
-    }
+class QRView: BaseView {
+
     
     lazy var title = createTitleLabel("출퇴근 체크 QR")
     lazy var descriptionLabel = createLabel("근태기에 QR코드를 인식해주세요.")
@@ -29,22 +27,11 @@ class QRView: UIView {
         $0.alpha = 0.5
     }
     
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        
-        setView()
+    override func setupSubviews() {
+        super.setupSubviews()
     }
     
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
-    private func setView() {
-        addSubviews()
-        setConstraints()
-    }
-    
-    private func addSubviews() {
+    override func addSubviews() {
         self.addSubview(title)
         self.addSubview(descriptionLabel)
         self.addSubview(qrView)
@@ -58,7 +45,7 @@ class QRView: UIView {
         remainTimeLabel.textColor = .blue
     }
     
-    private func setConstraints() {
+    override func addConstraints() {
         title.snp.remakeConstraints {
             $0.centerX.equalToSuperview()
             $0.width.equalTo(150)

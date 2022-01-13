@@ -8,33 +8,20 @@
 import UIKit
 import SnapKit
 
-class ProfileView: UIView {
-    static func instance() -> ProfileView {
-        return ProfileView()
-    }
+class ProfileView: BaseView {
+
     lazy var title = createTitleLabel("전자사원증")
     lazy var companyMark = createCompanyMark() 
     lazy var profilePhoto = createCompanyMark()
     lazy var department = createDepartmentLabel()
     lazy var name = createNameLabel()
     lazy var certificationLabel = createLabel("상기인을 당사 임직원임을 증명합니다.")
-    
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        
-        setView()
+
+    override func setupSubviews() {
+        super.setupSubviews()
     }
     
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
-    private func setView() {
-        addSubviews()
-        setConstraints()
-    }
-    
-    private func addSubviews() {
+    override func addSubviews() {
         self.addSubview(title)
         self.addSubview(companyMark)
         self.addSubview(profilePhoto)
@@ -43,7 +30,7 @@ class ProfileView: UIView {
         self.addSubview(certificationLabel)
     }
     
-    private func setConstraints() {
+    override func addConstraints() {
         title.snp.remakeConstraints {
             $0.centerX.equalToSuperview()
             $0.width.equalTo(150)

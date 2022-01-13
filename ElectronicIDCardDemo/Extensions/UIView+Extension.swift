@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Then
 
 extension UIView {
     func createTitleLabel(_ sentence: String) -> UILabel {

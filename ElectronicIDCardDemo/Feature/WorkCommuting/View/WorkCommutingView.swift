@@ -8,10 +8,7 @@
 import UIKit
 import SnapKit
 
-class WorkCommutingView: UIView {
-    static func instance() -> WorkCommutingView {
-        return WorkCommutingView()
-    }
+class WorkCommutingView: BaseView {
     
     lazy var title = createTitleLabel("나의 근무시간 관리")
     
@@ -30,23 +27,12 @@ class WorkCommutingView: UIView {
     
     lazy var commuteButton = createButton(name: "출근")
     lazy var leaveButton = createButton(name: "퇴근")
-    
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        
-        setView()
+ 
+    override func setupSubviews() {
+        super.setupSubviews()
     }
     
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
-    private func setView() {
-        addSubviews()
-        setConstraints()
-    }
-    
-    private func addSubviews() {
+    override func addSubviews() {
         self.addSubview(title)
         self.addSubview(todayDateView)
         todayDateView.addSubview(todayDateViewSpacing)
@@ -54,7 +40,7 @@ class WorkCommutingView: UIView {
         todayDateView.addSubview(todayDateLabel)
     }
     
-    private func setConstraints() {
+    override func addConstraints() {
         title.snp.remakeConstraints {
             $0.centerX.equalToSuperview()
             $0.top.equalToSuperview().offset(20)
