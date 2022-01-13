@@ -32,6 +32,7 @@
 		3AEE0287278FF417006D6A29 /* TodayDateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AEE0286278FF417006D6A29 /* TodayDateView.swift */; };
 		3AEE0289278FF4A8006D6A29 /* CommutingReportView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AEE0288278FF4A8006D6A29 /* CommutingReportView.swift */; };
 		3AEE028B278FF51C006D6A29 /* CommuteButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AEE028A278FF51C006D6A29 /* CommuteButtonView.swift */; };
+		3AEE028D278FF5F2006D6A29 /* TimeContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AEE028C278FF5F2006D6A29 /* TimeContainerView.swift */; };
 		BF78BAB9649E155F1F821434 /* Pods_ElectronicIDCardDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 587B8285E71AADC8873A9DAF /* Pods_ElectronicIDCardDemo.framework */; };
 /* End PBXBuildFile section */
 
@@ -64,6 +65,7 @@
 		3AEE0286278FF417006D6A29 /* TodayDateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayDateView.swift; sourceTree = "<group>"; };
 		3AEE0288278FF4A8006D6A29 /* CommutingReportView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommutingReportView.swift; sourceTree = "<group>"; };
 		3AEE028A278FF51C006D6A29 /* CommuteButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommuteButtonView.swift; sourceTree = "<group>"; };
+		3AEE028C278FF5F2006D6A29 /* TimeContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeContainerView.swift; sourceTree = "<group>"; };
 		587B8285E71AADC8873A9DAF /* Pods_ElectronicIDCardDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ElectronicIDCardDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B71A7269F86AED1249D9897A /* Pods-ElectronicIDCardDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ElectronicIDCardDemo.release.xcconfig"; path = "Target Support Files/Pods-ElectronicIDCardDemo/Pods-ElectronicIDCardDemo.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -208,6 +210,7 @@
 			children = (
 				3A180D27278D122F008B8F08 /* QRView.swift */,
 				3A180D29278D132C008B8F08 /* QRCodeView.swift */,
+				3AEE028C278FF5F2006D6A29 /* TimeContainerView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -400,6 +403,7 @@
 				3A180D28278D122F008B8F08 /* QRView.swift in Sources */,
 				3A10BCFD278C066600E7BC23 /* Constants.swift in Sources */,
 				3AEE0278278FA6F0006D6A29 /* QRViewController.swift in Sources */,
+				3AEE028D278FF5F2006D6A29 /* TimeContainerView.swift in Sources */,
 				3A10BCFF278C095B00E7BC23 /* ProfileView.swift in Sources */,
 				3AEE027E278FA79E006D6A29 /* BaseView.swift in Sources */,
 				3AEE0289278FF4A8006D6A29 /* CommutingReportView.swift in Sources */,

@@ -10,15 +10,11 @@ import Combine
 import SnapKit
 
 class QRView: BaseView {
-
-    
     lazy var title = createTitleLabel("출퇴근 체크 QR")
     lazy var descriptionLabel = createLabel("근태기에 QR코드를 인식해주세요.")
     lazy var qrView = createQRView(code: "TEST")
-    lazy var timeContainerView = UIView()
-    lazy var timeSpacingView = UIView()
-    lazy var timeDescriptionLabel = createLabel("남은 시간 ")
-    lazy var remainTimeLabel = createLabel("")
+    lazy var timeContainerView = TimeContainerView()
+    
     lazy var progressBar = createProgressBar()
     
     lazy var restartQRButton = UIButton().then {
@@ -37,12 +33,8 @@ class QRView: BaseView {
         self.addSubview(qrView)
         self.addSubview(restartQRButton)
         self.addSubview(timeContainerView)
-        timeContainerView.addSubview(timeSpacingView)
-        timeContainerView.addSubview(timeDescriptionLabel)
-        timeContainerView.addSubview(remainTimeLabel)
         self.addSubview(progressBar)
         
-        remainTimeLabel.textColor = .blue
     }
     
     override func addConstraints() {
@@ -73,27 +65,13 @@ class QRView: BaseView {
             $0.top.equalTo(qrView.snp.bottom).offset(20)
         }
         
-        timeSpacingView.snp.remakeConstraints {
-            $0.centerX.equalTo(title)
-            $0.top.bottom.equalToSuperview()
-            $0.width.equalTo(5)
-        }
-
-        timeDescriptionLabel.snp.remakeConstraints {
-            $0.leading.top.bottom.equalToSuperview()
-            $0.trailing.equalTo(timeSpacingView.snp.leading)
-        }
         
-        remainTimeLabel.snp.remakeConstraints {
-            $0.trailing.top.bottom.equalToSuperview()
-            $0.leading.equalTo(timeSpacingView.snp.trailing)
-        }
 
         progressBar.snp.remakeConstraints {
             $0.centerX.equalToSuperview()
             $0.width.equalTo(qrView.snp.width)
             $0.height.equalTo(30)
-            $0.top.equalTo(timeDescriptionLabel.snp.bottom).offset(20)
+            $0.top.equalTo(timeContainerView.snp.bottom).offset(20)
         }
     }
     

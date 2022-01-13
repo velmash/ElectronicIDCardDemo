@@ -43,7 +43,7 @@ class QRViewController: BaseViewController<QRView> {
             .sink { [weak self] countdown in
                 guard let self = self else { return }
                 
-                self.myView.remainTimeLabel.text = "\(Int(countdown) + 1)초 남음"
+                self.myView.timeContainerView.remainTimeLabel.text = "\(Int(countdown) + 1)초 남음"
                 let calcCountdown = Double(countdown)
                 self.myView.progressBar.progress = Float(calcCountdown / calcTime)
                 
@@ -61,7 +61,7 @@ class QRViewController: BaseViewController<QRView> {
         countDoneSubject
             .sink { [weak self] _ in
                 guard let self = self else { return }
-                self.myView.remainTimeLabel.text = "0초 남음"
+                self.myView.timeContainerView.remainTimeLabel.text = "0초 남음"
                 self.remainTime = 3
                 self.countTriggerSubject.send(())
 
