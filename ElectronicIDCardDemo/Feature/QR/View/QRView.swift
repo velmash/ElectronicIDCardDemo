@@ -28,16 +28,20 @@ class QRView: BaseView {
     }
     
     override func addSubviews() {
-        self.addSubview(title)
-        self.addSubview(descriptionLabel)
-        self.addSubview(qrView)
-        self.addSubview(restartQRButton)
-        self.addSubview(timeContainerView)
-        self.addSubview(progressBar)
+        super.addSubviews()
+        
+        addToBox(title)
+        addToBox(descriptionLabel)
+        addToBox(qrView)
+        addToBox(restartQRButton)
+        addToBox(timeContainerView)
+        addToBox(progressBar)
         
     }
     
     override func addConstraints() {
+        super.addConstraints()
+        
         title.snp.remakeConstraints {
             $0.centerX.equalToSuperview()
             $0.width.equalTo(150)

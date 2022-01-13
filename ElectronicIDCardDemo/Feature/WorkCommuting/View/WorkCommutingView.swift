@@ -22,11 +22,13 @@ class WorkCommutingView: BaseView {
     }
     
     override func addSubviews() {
-        addSubview(title)
-        addSubview(todayDateView)
-        addSubview(commuteTime)
-        addSubview(commutingReportView)
-        addSubview(commuteButtonView)
+        super.addSubviews()
+        
+        addToBox(title)
+        addToBox(todayDateView)
+        addToBox(commuteTime)
+        addToBox(commutingReportView)
+        addToBox(commuteButtonView)
         
         // 뷰 구분 테스트 코드
         commutingReportView.backgroundColor = .red
@@ -34,6 +36,8 @@ class WorkCommutingView: BaseView {
     }
     
     override func addConstraints() {
+        super.addConstraints()
+        
         title.snp.remakeConstraints {
             $0.centerX.equalToSuperview()
             $0.top.equalToSuperview().offset(20)

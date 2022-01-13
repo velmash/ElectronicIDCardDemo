@@ -21,7 +21,7 @@ class MainIDCardView: BaseView {
     }
     
     var pageContainerView = UIView().then {
-        $0.backgroundColor = UIColor(red: 1, green: 1, blue: 1, alpha: 0.2)
+        $0.backgroundColor = .clear//UIColor(red: 1, green: 1, blue: 1, alpha: 0.2)
     }
     
     override func setupSubviews() {

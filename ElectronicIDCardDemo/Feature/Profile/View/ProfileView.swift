@@ -9,7 +9,6 @@ import UIKit
 import SnapKit
 
 class ProfileView: BaseView {
-
     lazy var title = createTitleLabel("전자사원증")
     lazy var companyMark = createCompanyMark() 
     lazy var profilePhoto = createCompanyMark()
@@ -22,15 +21,19 @@ class ProfileView: BaseView {
     }
     
     override func addSubviews() {
-        self.addSubview(title)
-        self.addSubview(companyMark)
-        self.addSubview(profilePhoto)
-        self.addSubview(department)
-        self.addSubview(name)
-        self.addSubview(certificationLabel)
+        super.addSubviews()
+        
+        addToBox(title)
+        addToBox(companyMark)
+        addToBox(profilePhoto)
+        addToBox(department)
+        addToBox(name)
+        addToBox(certificationLabel)
     }
     
     override func addConstraints() {
+        super.addConstraints()
+        
         title.snp.remakeConstraints {
             $0.centerX.equalToSuperview()
             $0.width.equalTo(150)

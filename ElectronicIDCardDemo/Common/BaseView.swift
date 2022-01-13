@@ -6,12 +6,17 @@
 //
 
 import UIKit
+import SnapKit
 
 class BaseView: UIView {
+    var infoBox = UIView()
+    
     // MARK: - Initialization
     required override init(frame: CGRect) {
         super.init(frame: frame)
         setupSubviews()
+        infoBox.backgroundColor = .lightGray
+        infoBox.alpha = 0.7
     }
     
     required init?(coder: NSCoder) {
@@ -30,10 +35,19 @@ class BaseView: UIView {
     }
     
     func addSubviews() {
-        
+        addSubview(infoBox)
     }
     
     func addConstraints() {
-        
+        infoBox.snp.remakeConstraints {
+            $0.top.bottom.centerX.equalToSuperview()
+            $0.width.equalToSuperview().multipliedBy(0.8)
+        }
+    }
+}
+
+extension BaseView {
+    func addToBox(_ view: UIView) {
+        infoBox.addSubview(view)
     }
 }
