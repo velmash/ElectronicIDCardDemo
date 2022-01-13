@@ -37,7 +37,7 @@ class MainIDCardView: BaseView {
     
     override func addConstraints() {
         pageContainerView.snp.makeConstraints {
-            $0.width.equalToSuperview()//(Constants.MainIDViewDesign.cardWidth)
+            $0.width.equalToSuperview()
             $0.height.equalTo(Constants.MainIDViewDesign.cardHeight)
             $0.center.equalToSuperview()
         }

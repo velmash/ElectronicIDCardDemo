@@ -15,8 +15,9 @@ class BaseView: UIView {
     required override init(frame: CGRect) {
         super.init(frame: frame)
         setupSubviews()
-        infoBox.backgroundColor = .lightGray
-        infoBox.alpha = 0.7
+        infoBox.backgroundColor = .magenta
+        infoBox.layer.cornerRadius = 10
+        infoBox.layer.borderWidth = 2
     }
     
     required init?(coder: NSCoder) {
