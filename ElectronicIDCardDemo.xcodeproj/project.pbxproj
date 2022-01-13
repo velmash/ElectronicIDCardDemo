@@ -33,6 +33,7 @@
 		3AEE0289278FF4A8006D6A29 /* CommutingReportView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AEE0288278FF4A8006D6A29 /* CommutingReportView.swift */; };
 		3AEE028B278FF51C006D6A29 /* CommuteButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AEE028A278FF51C006D6A29 /* CommuteButtonView.swift */; };
 		3AEE028D278FF5F2006D6A29 /* TimeContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AEE028C278FF5F2006D6A29 /* TimeContainerView.swift */; };
+		3AEE02912790014D006D6A29 /* WorkCommutingViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AEE02902790014D006D6A29 /* WorkCommutingViewController+Extension.swift */; };
 		BF78BAB9649E155F1F821434 /* Pods_ElectronicIDCardDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 587B8285E71AADC8873A9DAF /* Pods_ElectronicIDCardDemo.framework */; };
 /* End PBXBuildFile section */
 
@@ -66,6 +67,7 @@
 		3AEE0288278FF4A8006D6A29 /* CommutingReportView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommutingReportView.swift; sourceTree = "<group>"; };
 		3AEE028A278FF51C006D6A29 /* CommuteButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommuteButtonView.swift; sourceTree = "<group>"; };
 		3AEE028C278FF5F2006D6A29 /* TimeContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeContainerView.swift; sourceTree = "<group>"; };
+		3AEE02902790014D006D6A29 /* WorkCommutingViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WorkCommutingViewController+Extension.swift"; sourceTree = "<group>"; };
 		587B8285E71AADC8873A9DAF /* Pods_ElectronicIDCardDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ElectronicIDCardDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B71A7269F86AED1249D9897A /* Pods-ElectronicIDCardDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ElectronicIDCardDemo.release.xcconfig"; path = "Target Support Files/Pods-ElectronicIDCardDemo/Pods-ElectronicIDCardDemo.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -108,7 +110,7 @@
 				3AEE0284278FE99C006D6A29 /* Dependency.swift */,
 				3A10BCE5278BEBAF00E7BC23 /* ViewController.swift */,
 				3AEE0264278FA541006D6A29 /* Feature */,
-				3AEE0281278FC5B8006D6A29 /* Commn */,
+				3AEE0281278FC5B8006D6A29 /* Common */,
 				3A10BD00278C0E9700E7BC23 /* Extensions */,
 				3A10BCE7278BEBAF00E7BC23 /* Main.storyboard */,
 				3A10BCEA278BEBB000E7BC23 /* Assets.xcassets */,
@@ -228,6 +230,7 @@
 			isa = PBXGroup;
 			children = (
 				3AEE0279278FA701006D6A29 /* WorkCommutingViewController.swift */,
+				3AEE02902790014D006D6A29 /* WorkCommutingViewController+Extension.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -243,7 +246,7 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		3AEE0281278FC5B8006D6A29 /* Commn */ = {
+		3AEE0281278FC5B8006D6A29 /* Common */ = {
 			isa = PBXGroup;
 			children = (
 				3A10BCFC278C066600E7BC23 /* Constants.swift */,
@@ -251,7 +254,7 @@
 				3AEE027D278FA79E006D6A29 /* BaseView.swift */,
 				3AEE027F278FAFDC006D6A29 /* ViewEmbedder.swift */,
 			);
-			path = Commn;
+			path = Common;
 			sourceTree = "<group>";
 		};
 		B5DA4985936B98C3857D3EC7 /* Pods */ = {
@@ -389,6 +392,7 @@
 				3AEE0280278FAFDC006D6A29 /* ViewEmbedder.swift in Sources */,
 				3AEE028B278FF51C006D6A29 /* CommuteButtonView.swift in Sources */,
 				3AEE0269278FA57F006D6A29 /* MainIDCardViewController.swift in Sources */,
+				3AEE02912790014D006D6A29 /* WorkCommutingViewController+Extension.swift in Sources */,
 				3AEE0285278FE99C006D6A29 /* Dependency.swift in Sources */,
 				3A10BCE6278BEBAF00E7BC23 /* ViewController.swift in Sources */,
 				3AEE0283278FC75E006D6A29 /* Int+Extension.swift in Sources */,
