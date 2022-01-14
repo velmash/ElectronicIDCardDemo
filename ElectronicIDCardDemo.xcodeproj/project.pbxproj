@@ -18,6 +18,9 @@
 		3A10BD02278C0EA900E7BC23 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A10BD01278C0EA900E7BC23 /* UIView+Extension.swift */; };
 		3A180D28278D122F008B8F08 /* QRView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A180D27278D122F008B8F08 /* QRView.swift */; };
 		3A180D2A278D132C008B8F08 /* QRCodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A180D29278D132C008B8F08 /* QRCodeView.swift */; };
+		3AE479542790FF1F00B8AA5C /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE479532790FF1F00B8AA5C /* ProfileViewModel.swift */; };
+		3AE479562790FFC200B8AA5C /* ProfileModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE479552790FFC200B8AA5C /* ProfileModel.swift */; };
+		3AE4795827910B5400B8AA5C /* ViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE4795727910B5400B8AA5C /* ViewModelType.swift */; };
 		3AEE0217278EA294006D6A29 /* WorkCommutingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AEE0216278EA294006D6A29 /* WorkCommutingView.swift */; };
 		3AEE0269278FA57F006D6A29 /* MainIDCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AEE0268278FA57F006D6A29 /* MainIDCardViewController.swift */; };
 		3AEE026B278FA5A0006D6A29 /* MainIDCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AEE026A278FA5A0006D6A29 /* MainIDCardView.swift */; };
@@ -52,6 +55,9 @@
 		3A10BD01278C0EA900E7BC23 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		3A180D27278D122F008B8F08 /* QRView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRView.swift; sourceTree = "<group>"; };
 		3A180D29278D132C008B8F08 /* QRCodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeView.swift; sourceTree = "<group>"; };
+		3AE479532790FF1F00B8AA5C /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
+		3AE479552790FFC200B8AA5C /* ProfileModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileModel.swift; sourceTree = "<group>"; };
+		3AE4795727910B5400B8AA5C /* ViewModelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelType.swift; sourceTree = "<group>"; };
 		3AEE0216278EA294006D6A29 /* WorkCommutingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkCommutingView.swift; sourceTree = "<group>"; };
 		3AEE0268278FA57F006D6A29 /* MainIDCardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainIDCardViewController.swift; sourceTree = "<group>"; };
 		3AEE026A278FA5A0006D6A29 /* MainIDCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainIDCardView.swift; sourceTree = "<group>"; };
@@ -129,6 +135,14 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		3AE479522790FF0300B8AA5C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				3AE479552790FFC200B8AA5C /* ProfileModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		3AEE0264278FA541006D6A29 /* Feature */ = {
 			isa = PBXGroup;
 			children = (
@@ -168,7 +182,8 @@
 		3AEE026C278FA5A8006D6A29 /* Profile */ = {
 			isa = PBXGroup;
 			children = (
-				3AEE026E278FA5C4006D6A29 /* View */,
+				3AE479522790FF0300B8AA5C /* Model */,
+				3AEE026E278FA5C4006D6A29 /* ViewModel */,
 				3AEE026D278FA5BD006D6A29 /* ViewController */,
 			);
 			path = Profile;
@@ -178,16 +193,17 @@
 			isa = PBXGroup;
 			children = (
 				3AEE0275278FA6E7006D6A29 /* ProfileViewController.swift */,
+				3A10BCFE278C095B00E7BC23 /* ProfileView.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
 		};
-		3AEE026E278FA5C4006D6A29 /* View */ = {
+		3AEE026E278FA5C4006D6A29 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				3A10BCFE278C095B00E7BC23 /* ProfileView.swift */,
+				3AE479532790FF1F00B8AA5C /* ProfileViewModel.swift */,
 			);
-			path = View;
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		3AEE026F278FA5C8006D6A29 /* QR */ = {
@@ -253,6 +269,7 @@
 				3AEE027B278FA757006D6A29 /* BaseViewController.swift */,
 				3AEE027D278FA79E006D6A29 /* BaseView.swift */,
 				3AEE027F278FAFDC006D6A29 /* ViewEmbedder.swift */,
+				3AE4795727910B5400B8AA5C /* ViewModelType.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -403,7 +420,9 @@
 				3AEE027C278FA757006D6A29 /* BaseViewController.swift in Sources */,
 				3A10BCE2278BEBAF00E7BC23 /* AppDelegate.swift in Sources */,
 				3AEE026B278FA5A0006D6A29 /* MainIDCardView.swift in Sources */,
+				3AE479542790FF1F00B8AA5C /* ProfileViewModel.swift in Sources */,
 				3AEE0287278FF417006D6A29 /* TodayDateView.swift in Sources */,
+				3AE479562790FFC200B8AA5C /* ProfileModel.swift in Sources */,
 				3A180D28278D122F008B8F08 /* QRView.swift in Sources */,
 				3A10BCFD278C066600E7BC23 /* Constants.swift in Sources */,
 				3AEE0278278FA6F0006D6A29 /* QRViewController.swift in Sources */,
@@ -413,6 +432,7 @@
 				3AEE0289278FF4A8006D6A29 /* CommutingReportView.swift in Sources */,
 				3AEE0217278EA294006D6A29 /* WorkCommutingView.swift in Sources */,
 				3A10BCE4278BEBAF00E7BC23 /* SceneDelegate.swift in Sources */,
+				3AE4795827910B5400B8AA5C /* ViewModelType.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -562,7 +582,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = FP8CB3BY93;
+				DEVELOPMENT_TEAM = BR6U9G47ZR;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ElectronicIDCardDemo/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -592,7 +612,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = FP8CB3BY93;
+				DEVELOPMENT_TEAM = BR6U9G47ZR;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ElectronicIDCardDemo/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
