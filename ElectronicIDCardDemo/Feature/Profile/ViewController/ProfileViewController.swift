@@ -15,14 +15,12 @@ class ProfileViewController: BaseViewController<ProfileView, ProfileViewModel> {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        viewModel.trigger.send(())
+        viewModel.viewDidLoadTrigger.send(())
     }
 
     //TODO: viewModel에서 가져온 View에 이미지나 텍스트 바인딩하는 코드 구현
     override func pageBinding() {
-        let input = ProfileViewModel.Input(
-            viewDidLoad: viewModel.trigger.send(())
-        )
+        let input = ProfileViewModel.Input()
         
         let output = viewModel.transform(input: input)
         

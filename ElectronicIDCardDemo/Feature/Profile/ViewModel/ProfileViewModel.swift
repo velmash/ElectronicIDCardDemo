@@ -15,11 +15,9 @@ class ProfileViewModel: ViewModelType {
     }
     
     let profileModel = ProfileModel()
-    let trigger = PassthroughSubject<Void, Never>()
+    let viewDidLoadTrigger = PassthroughSubject<Void, Never>()
     
-    struct Input {
-        let viewDidLoad: ()
-    }
+    struct Input { }
     
     //TODO: 전자사원증 뷰에 들어가는 데이터 전체 바인딩
     final class Output {
@@ -30,13 +28,13 @@ class ProfileViewModel: ViewModelType {
     func transform(input: Input) -> Output {
         let output = Output()
         
-        trigger
+        viewDidLoadTrigger
             .map { [weak self] in
                 return output.title == nil ? self?.profileModel.getTitle() : nil
             }
             .assign(to: &output.$title)
         
-        trigger
+        viewDidLoadTrigger
             .map { [weak self] in
                 return output.companyMark == nil ? self?.profileModel.getPhoto() : nil
             }

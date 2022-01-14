@@ -13,13 +13,16 @@ class QRViewModel: ViewModelType {
     }
     
     let qrModel = QRModel()
+    let timerTrigger = PassthroughSubject<Void, Never>()
     
     struct Input {
         let didTapRestartButton: AnyPublisher<Void, Never>
+        let remainTime: AnyPublisher<Double, Never>
     }
     
     final class Output {
         @Published var reloadQR: Void?
+        @Published var progress: Float?
     }
     
     func transform(input: Input) -> Output {
@@ -28,6 +31,11 @@ class QRViewModel: ViewModelType {
         input.didTapRestartButton
             .compactMap { $0 }
             .assign(to: &output.$reloadQR)
+        
+        input.remainTime
+            .map { Float($0) }
+            .assign(to: &output.$progress)
+            
         
         return output
     }

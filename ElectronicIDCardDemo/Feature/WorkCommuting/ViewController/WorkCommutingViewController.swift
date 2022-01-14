@@ -15,22 +15,27 @@ class WorkCommutingViewController: BaseViewController<WorkCommutingView, WorkCom
     
     override func viewDidLoad() {
         super.viewDidLoad()
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
         
         myView.todayDateView.todayDateLabel.text = getDayToday()
     }
     
     override func pageBinding() {
-        myView.commuteButtonView.commuteButton.tapPublisher
-            .sink { [weak self] in self?.showAlarm(.commute) }
+        let input = WorkCommutingViewModel.Input(
+            didTapCommuteButton: myView.commuteButtonView.commuteButton.tapPublisher,
+            didTapLeaveButton: myView.commuteButtonView.leaveButton.tapPublisher
+        )
+        
+        let output = viewModel.transform(input: input)
+        
+        output.$commute
+            .filter { $0 != nil }
+            .sink { [weak self] _ in self?.showAlarm(.commute) }
             .store(in: &bag)
         
-        myView.commuteButtonView.leaveButton.tapPublisher
-            .sink { [weak self] in self?.showAlarm(.leave) }
-            .store(in: &bag)
+        output.$leave
+            .filter { $0 != nil }
+            .sink { [weak self] _ in self?.showAlarm(.leave) }
+            .store(in: &bag)    
     }
 }
 

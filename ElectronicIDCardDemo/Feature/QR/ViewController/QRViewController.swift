@@ -24,13 +24,16 @@ class QRViewController: BaseViewController<QRView, QRViewModel> {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        viewModel.timerTrigger.send(())
+        
         // initial trigger
-        countTriggerSubject.send(())
+//        countTriggerSubject.send(())
     }
     
     override func pageBinding() {
         let input = QRViewModel.Input(
-            didTapRestartButton: myView.restartQRButton.tapPublisher
+            didTapRestartButton: myView.restartQRButton.tapPublisher,
+            remainTime: remainTimeSubject.eraseToAnyPublisher()
         )
         
         let output = viewModel.transform(input: input)
@@ -46,25 +49,15 @@ class QRViewController: BaseViewController<QRView, QRViewModel> {
             }
             .store(in: &bag)
         
-        // start timer after trriger
-        countTriggerSubject
-            // 여기에 qr 새로만드는 로직도 추가
-            // 여기또는 타이머에 또는 새로운 Subject에 반응형으로
-//        myView.qrView.createQRView(code: 여기에 함수화 된 뭐 코드 ---),,,, 방법 여러가지
-            .sink { self.startTimer() }
-            .store(in: &bag)
-        
-        // binding label & progress bar
         let calcTime = Double(self.remainTime)
-        remainTimeSubject
+        output.$progress
+            .compactMap { $0 }
             .sink { [weak self] countdown in
                 guard let self = self else { return }
-                
                 self.myView.timeContainerView.remainTimeLabel.text = "\(Int(countdown) + 1)초 남음"
                 let calcCountdown = Double(countdown)
                 self.myView.progressBar.progress = Float(calcCountdown / calcTime)
-                
-                if(countdown < Double(0.0)) {
+                if(countdown < 0) {
                     self.timer?.invalidate()
                     self.timer = nil
                     
@@ -73,6 +66,15 @@ class QRViewController: BaseViewController<QRView, QRViewModel> {
                 }
             }
             .store(in: &bag)
+        
+        // start timer after trriger
+        countTriggerSubject
+            // 여기에 qr 새로만드는 로직도 추가
+            // 여기또는 타이머에 또는 새로운 Subject에 반응형으로
+//        myView.qrView.createQRView(code: 여기에 함수화 된 뭐 코드 ---),,,, 방법 여러가지
+            .sink { self.startTimer() }
+            .store(in: &bag)
+
         
         // loop 3 times
         countDoneSubject

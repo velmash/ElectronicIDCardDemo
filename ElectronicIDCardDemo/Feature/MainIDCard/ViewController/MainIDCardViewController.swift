@@ -31,14 +31,23 @@ class MainIDCardViewController: BaseViewController<MainIDCardView, MainIDCardVie
         setupViewModel()
         setupPageController()
         setupPageControl()
-        setupButton()
         setupToast()
+        
+        let input = MainIDCardViewModel.Input(didTapRestartButton: myView.backButton.tapPublisher)
+        
+        let output = viewModel.transform(input: input)
+        
+        output.$closePage
+            .filter { $0 != nil }
+            .sink { _ in self.dismiss(animated: false, completion: nil) }
+            .store(in: &bag)
     }
 }
 
 // MARK: - VC Function
 extension MainIDCardViewController {
     func setupViewModel() {
+        self.viewModel = MainIDCardViewModel.instance()
         profileVC.viewModel = ProfileViewModel.instance()
         qrVC.viewModel = QRViewModel.instance()
         workCommutingVC.viewModel = WorkCommutingViewModel.instance()
@@ -57,12 +66,6 @@ extension MainIDCardViewController {
     func setupPageControl() {
         myView.pageControl.numberOfPages = pages.count
         myView.pageControl.currentPage = pages.firstIndex(of: qrVC) ?? 0
-    }
-    
-    func setupButton() {
-        myView.backButton.tapPublisher
-            .sink { self.dismiss(animated: false, completion: nil) }
-            .store(in: &bag)
     }
     
     func setupToast() {
