@@ -7,13 +7,33 @@
 
 import UIKit
 import SnapKit
+import CombineCocoa
+import Combine
 
 class ProfileViewController: BaseViewController<ProfileView> {
-
+    
+    private let viewModel = ProfileViewModel()
+    
+    let testPublisher = Just(())
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+    
     }
+
     
     // 서버에서 데이터 받아와서 View에 이미지나 텍스트 바인딩하는 코드 구현
+    override func pageBinding() {
+        let input = ProfileViewModel.Input(
+            viewLoaded: testPublisher.eraseToAnyPublisher()
+        )
+        
+        let output = viewModel.transform(input: input)
+        
+        output.$title
+            .sink { [weak self] title in
+                self?.myView.title.text = title
+            }
+            .store(in: &bag)
+    }
 }
