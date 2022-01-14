@@ -9,7 +9,7 @@ import UIKit
 import Combine
 import CombineCocoa
 
-class WorkCommutingViewController: BaseViewController<WorkCommutingView> {
+class WorkCommutingViewController: BaseViewController<WorkCommutingView, WorkCommutingViewModel> {
     
     let toastViewTrigger = PassthroughSubject<Void, Never>()
     

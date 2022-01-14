@@ -8,7 +8,7 @@
 import UIKit
 import CombineCocoa
 
-class MainIDCardViewController: BaseViewController<MainIDCardView> {
+class MainIDCardViewController: BaseViewController<MainIDCardView, MainIDCardViewModel> {
     private let profileVC = ProfileViewController()
     private let qrVC = QRViewController()
     private let workCommutingVC = WorkCommutingViewController()

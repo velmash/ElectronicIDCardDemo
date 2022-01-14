@@ -11,6 +11,10 @@ import UIKit
 //TODO: 전자사원증 데이터 API로 받아오는 코드 작성
 class ProfileModel {
     func getTitle() -> String? {
-        return "전자사원증"
+        return "ddd"
+    }
+    
+    func getPhoto() -> UIImage? {
+        return UIImage(named: "Ggachi")
     }
 }

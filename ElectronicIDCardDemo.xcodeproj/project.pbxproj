@@ -21,6 +21,12 @@
 		3AE479542790FF1F00B8AA5C /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE479532790FF1F00B8AA5C /* ProfileViewModel.swift */; };
 		3AE479562790FFC200B8AA5C /* ProfileModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE479552790FFC200B8AA5C /* ProfileModel.swift */; };
 		3AE4795827910B5400B8AA5C /* ViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE4795727910B5400B8AA5C /* ViewModelType.swift */; };
+		3AE4795B2791331500B8AA5C /* QRModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE4795A2791331500B8AA5C /* QRModel.swift */; };
+		3AE4795D2791331C00B8AA5C /* QRViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE4795C2791331C00B8AA5C /* QRViewModel.swift */; };
+		3AE47962279138EE00B8AA5C /* WorkCommutingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE47961279138EE00B8AA5C /* WorkCommutingModel.swift */; };
+		3AE47964279138FB00B8AA5C /* WorkCommutingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE47963279138FB00B8AA5C /* WorkCommutingViewModel.swift */; };
+		3AE4796927913B2300B8AA5C /* MainIDCardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE4796827913B2300B8AA5C /* MainIDCardViewModel.swift */; };
+		3AE4796B27913B2B00B8AA5C /* MainIDCardModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE4796A27913B2B00B8AA5C /* MainIDCardModel.swift */; };
 		3AEE0217278EA294006D6A29 /* WorkCommutingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AEE0216278EA294006D6A29 /* WorkCommutingView.swift */; };
 		3AEE0269278FA57F006D6A29 /* MainIDCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AEE0268278FA57F006D6A29 /* MainIDCardViewController.swift */; };
 		3AEE026B278FA5A0006D6A29 /* MainIDCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AEE026A278FA5A0006D6A29 /* MainIDCardView.swift */; };
@@ -58,6 +64,12 @@
 		3AE479532790FF1F00B8AA5C /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
 		3AE479552790FFC200B8AA5C /* ProfileModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileModel.swift; sourceTree = "<group>"; };
 		3AE4795727910B5400B8AA5C /* ViewModelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelType.swift; sourceTree = "<group>"; };
+		3AE4795A2791331500B8AA5C /* QRModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRModel.swift; sourceTree = "<group>"; };
+		3AE4795C2791331C00B8AA5C /* QRViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRViewModel.swift; sourceTree = "<group>"; };
+		3AE47961279138EE00B8AA5C /* WorkCommutingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkCommutingModel.swift; sourceTree = "<group>"; };
+		3AE47963279138FB00B8AA5C /* WorkCommutingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkCommutingViewModel.swift; sourceTree = "<group>"; };
+		3AE4796827913B2300B8AA5C /* MainIDCardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainIDCardViewModel.swift; sourceTree = "<group>"; };
+		3AE4796A27913B2B00B8AA5C /* MainIDCardModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainIDCardModel.swift; sourceTree = "<group>"; };
 		3AEE0216278EA294006D6A29 /* WorkCommutingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkCommutingView.swift; sourceTree = "<group>"; };
 		3AEE0268278FA57F006D6A29 /* MainIDCardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainIDCardViewController.swift; sourceTree = "<group>"; };
 		3AEE026A278FA5A0006D6A29 /* MainIDCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainIDCardView.swift; sourceTree = "<group>"; };
@@ -143,6 +155,49 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		3AE47959279132F600B8AA5C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				3AE4795A2791331500B8AA5C /* QRModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		3AE4795E2791388300B8AA5C /* Subviews */ = {
+			isa = PBXGroup;
+			children = (
+				3A180D29278D132C008B8F08 /* QRCodeView.swift */,
+				3AEE028C278FF5F2006D6A29 /* TimeContainerView.swift */,
+			);
+			path = Subviews;
+			sourceTree = "<group>";
+		};
+		3AE4795F279138C800B8AA5C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				3AE47961279138EE00B8AA5C /* WorkCommutingModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		3AE47960279138D300B8AA5C /* Subviews */ = {
+			isa = PBXGroup;
+			children = (
+				3AEE0286278FF417006D6A29 /* TodayDateView.swift */,
+				3AEE0288278FF4A8006D6A29 /* CommutingReportView.swift */,
+				3AEE028A278FF51C006D6A29 /* CommuteButtonView.swift */,
+			);
+			path = Subviews;
+			sourceTree = "<group>";
+		};
+		3AE4796727913B1500B8AA5C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				3AE4796A27913B2B00B8AA5C /* MainIDCardModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		3AEE0264278FA541006D6A29 /* Feature */ = {
 			isa = PBXGroup;
 			children = (
@@ -157,6 +212,7 @@
 		3AEE0265278FA554006D6A29 /* MainIDCard */ = {
 			isa = PBXGroup;
 			children = (
+				3AE4796727913B1500B8AA5C /* Model */,
 				3AEE0267278FA56C006D6A29 /* View */,
 				3AEE0266278FA561006D6A29 /* ViewController */,
 			);
@@ -167,6 +223,7 @@
 			isa = PBXGroup;
 			children = (
 				3AEE0268278FA57F006D6A29 /* MainIDCardViewController.swift */,
+				3AEE026A278FA5A0006D6A29 /* MainIDCardView.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -174,7 +231,7 @@
 		3AEE0267278FA56C006D6A29 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				3AEE026A278FA5A0006D6A29 /* MainIDCardView.swift */,
+				3AE4796827913B2300B8AA5C /* MainIDCardViewModel.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -209,7 +266,8 @@
 		3AEE026F278FA5C8006D6A29 /* QR */ = {
 			isa = PBXGroup;
 			children = (
-				3AEE0271278FA5DB006D6A29 /* View */,
+				3AE47959279132F600B8AA5C /* Model */,
+				3AEE0271278FA5DB006D6A29 /* ViewModel */,
 				3AEE0270278FA5D4006D6A29 /* ViewController */,
 			);
 			path = QR;
@@ -219,24 +277,25 @@
 			isa = PBXGroup;
 			children = (
 				3AEE0277278FA6F0006D6A29 /* QRViewController.swift */,
+				3A180D27278D122F008B8F08 /* QRView.swift */,
+				3AE4795E2791388300B8AA5C /* Subviews */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
 		};
-		3AEE0271278FA5DB006D6A29 /* View */ = {
+		3AEE0271278FA5DB006D6A29 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				3A180D27278D122F008B8F08 /* QRView.swift */,
-				3A180D29278D132C008B8F08 /* QRCodeView.swift */,
-				3AEE028C278FF5F2006D6A29 /* TimeContainerView.swift */,
+				3AE4795C2791331C00B8AA5C /* QRViewModel.swift */,
 			);
-			path = View;
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		3AEE0272278FA5E2006D6A29 /* WorkCommuting */ = {
 			isa = PBXGroup;
 			children = (
-				3AEE0274278FA602006D6A29 /* View */,
+				3AE4795F279138C800B8AA5C /* Model */,
+				3AEE0274278FA602006D6A29 /* ViewModel */,
 				3AEE0273278FA5F8006D6A29 /* ViewController */,
 			);
 			path = WorkCommuting;
@@ -247,19 +306,18 @@
 			children = (
 				3AEE0279278FA701006D6A29 /* WorkCommutingViewController.swift */,
 				3AEE02902790014D006D6A29 /* WorkCommutingViewController+Extension.swift */,
+				3AEE0216278EA294006D6A29 /* WorkCommutingView.swift */,
+				3AE47960279138D300B8AA5C /* Subviews */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
 		};
-		3AEE0274278FA602006D6A29 /* View */ = {
+		3AEE0274278FA602006D6A29 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				3AEE0216278EA294006D6A29 /* WorkCommutingView.swift */,
-				3AEE0286278FF417006D6A29 /* TodayDateView.swift */,
-				3AEE0288278FF4A8006D6A29 /* CommutingReportView.swift */,
-				3AEE028A278FF51C006D6A29 /* CommuteButtonView.swift */,
+				3AE47963279138FB00B8AA5C /* WorkCommutingViewModel.swift */,
 			);
-			path = View;
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		3AEE0281278FC5B8006D6A29 /* Common */ = {
@@ -415,10 +473,14 @@
 				3AEE0283278FC75E006D6A29 /* Int+Extension.swift in Sources */,
 				3AEE027A278FA701006D6A29 /* WorkCommutingViewController.swift in Sources */,
 				3A180D2A278D132C008B8F08 /* QRCodeView.swift in Sources */,
+				3AE4795D2791331C00B8AA5C /* QRViewModel.swift in Sources */,
 				3AEE0276278FA6E7006D6A29 /* ProfileViewController.swift in Sources */,
 				3A10BD02278C0EA900E7BC23 /* UIView+Extension.swift in Sources */,
+				3AE4796927913B2300B8AA5C /* MainIDCardViewModel.swift in Sources */,
+				3AE47964279138FB00B8AA5C /* WorkCommutingViewModel.swift in Sources */,
 				3AEE027C278FA757006D6A29 /* BaseViewController.swift in Sources */,
 				3A10BCE2278BEBAF00E7BC23 /* AppDelegate.swift in Sources */,
+				3AE4796B27913B2B00B8AA5C /* MainIDCardModel.swift in Sources */,
 				3AEE026B278FA5A0006D6A29 /* MainIDCardView.swift in Sources */,
 				3AE479542790FF1F00B8AA5C /* ProfileViewModel.swift in Sources */,
 				3AEE0287278FF417006D6A29 /* TodayDateView.swift in Sources */,
@@ -428,8 +490,10 @@
 				3AEE0278278FA6F0006D6A29 /* QRViewController.swift in Sources */,
 				3AEE028D278FF5F2006D6A29 /* TimeContainerView.swift in Sources */,
 				3A10BCFF278C095B00E7BC23 /* ProfileView.swift in Sources */,
+				3AE47962279138EE00B8AA5C /* WorkCommutingModel.swift in Sources */,
 				3AEE027E278FA79E006D6A29 /* BaseView.swift in Sources */,
 				3AEE0289278FF4A8006D6A29 /* CommutingReportView.swift in Sources */,
+				3AE4795B2791331500B8AA5C /* QRModel.swift in Sources */,
 				3AEE0217278EA294006D6A29 /* WorkCommutingView.swift in Sources */,
 				3A10BCE4278BEBAF00E7BC23 /* SceneDelegate.swift in Sources */,
 				3AE4795827910B5400B8AA5C /* ViewModelType.swift in Sources */,

@@ -8,12 +8,15 @@
 import UIKit
 import Combine
 
-class BaseViewController<CustomView: BaseView>: UIViewController {
+class BaseViewController<CustomView: BaseView, ViewModel: ViewModelType>: UIViewController {
     
     // MARK: - Properties
     lazy var myView: CustomView = {
         return view as! CustomView
     }()
+    
+    var viewModel: ViewModel!
+    
     var bag = Set<AnyCancellable>()
     
     

@@ -8,7 +8,7 @@
 import UIKit
 import Combine
 
-class QRViewController: BaseViewController<QRView> {
+class QRViewController: BaseViewController<QRView, QRViewModel> {
     
     //MARK: properties
     private var timer: Timer?
@@ -74,9 +74,18 @@ class QRViewController: BaseViewController<QRView> {
             }
             .store(in: &bag)
         
-        // bind button
-        myView.restartQRButton.tapPublisher
-            .sink { [weak self] in
+        mvvmTest()
+    }
+    
+    func mvvmTest() {
+        let input = QRViewModel.Input(
+            didTapRestartButton: myView.restartQRButton.tapPublisher
+        )
+        
+        let output = viewModel.transform(input: input)
+        
+        output.$reloadQR
+            .sink { [weak self] _ in
                 guard let self = self else { return }
                 self.myView.restartQRButton.isHidden = true
                 
