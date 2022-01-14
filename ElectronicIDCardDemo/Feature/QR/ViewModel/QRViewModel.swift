@@ -8,6 +8,10 @@
 import Combine
 
 class QRViewModel: ViewModelType {
+    static func instance() -> QRViewModel {
+        return QRViewModel()
+    }
+    
     let qrModel = QRModel()
     
     struct Input {

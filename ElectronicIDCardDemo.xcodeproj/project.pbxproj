@@ -37,7 +37,6 @@
 		3AEE027E278FA79E006D6A29 /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AEE027D278FA79E006D6A29 /* BaseView.swift */; };
 		3AEE0280278FAFDC006D6A29 /* ViewEmbedder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AEE027F278FAFDC006D6A29 /* ViewEmbedder.swift */; };
 		3AEE0283278FC75E006D6A29 /* Int+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AEE0282278FC75E006D6A29 /* Int+Extension.swift */; };
-		3AEE0285278FE99C006D6A29 /* Dependency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AEE0284278FE99C006D6A29 /* Dependency.swift */; };
 		3AEE0287278FF417006D6A29 /* TodayDateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AEE0286278FF417006D6A29 /* TodayDateView.swift */; };
 		3AEE0289278FF4A8006D6A29 /* CommutingReportView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AEE0288278FF4A8006D6A29 /* CommutingReportView.swift */; };
 		3AEE028B278FF51C006D6A29 /* CommuteButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AEE028A278FF51C006D6A29 /* CommuteButtonView.swift */; };
@@ -80,7 +79,6 @@
 		3AEE027D278FA79E006D6A29 /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
 		3AEE027F278FAFDC006D6A29 /* ViewEmbedder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewEmbedder.swift; sourceTree = "<group>"; };
 		3AEE0282278FC75E006D6A29 /* Int+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+Extension.swift"; sourceTree = "<group>"; };
-		3AEE0284278FE99C006D6A29 /* Dependency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dependency.swift; sourceTree = "<group>"; };
 		3AEE0286278FF417006D6A29 /* TodayDateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayDateView.swift; sourceTree = "<group>"; };
 		3AEE0288278FF4A8006D6A29 /* CommutingReportView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommutingReportView.swift; sourceTree = "<group>"; };
 		3AEE028A278FF51C006D6A29 /* CommuteButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommuteButtonView.swift; sourceTree = "<group>"; };
@@ -125,7 +123,6 @@
 			children = (
 				3A10BCE1278BEBAF00E7BC23 /* AppDelegate.swift */,
 				3A10BCE3278BEBAF00E7BC23 /* SceneDelegate.swift */,
-				3AEE0284278FE99C006D6A29 /* Dependency.swift */,
 				3A10BCE5278BEBAF00E7BC23 /* ViewController.swift */,
 				3AEE0264278FA541006D6A29 /* Feature */,
 				3AEE0281278FC5B8006D6A29 /* Common */,
@@ -468,7 +465,6 @@
 				3AEE028B278FF51C006D6A29 /* CommuteButtonView.swift in Sources */,
 				3AEE0269278FA57F006D6A29 /* MainIDCardViewController.swift in Sources */,
 				3AEE02912790014D006D6A29 /* WorkCommutingViewController+Extension.swift in Sources */,
-				3AEE0285278FE99C006D6A29 /* Dependency.swift in Sources */,
 				3A10BCE6278BEBAF00E7BC23 /* ViewController.swift in Sources */,
 				3AEE0283278FC75E006D6A29 /* Int+Extension.swift in Sources */,
 				3AEE027A278FA701006D6A29 /* WorkCommutingViewController.swift in Sources */,

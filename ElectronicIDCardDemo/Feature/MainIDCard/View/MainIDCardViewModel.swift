@@ -6,6 +6,10 @@
 //
 
 class MainIDCardViewModel: ViewModelType {
+    static func instance() -> MainIDCardViewModel {
+        return MainIDCardViewModel()
+    }
+    
     let mainModel = MainIDCardModel()
     
     struct Input {

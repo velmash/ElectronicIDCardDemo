@@ -25,12 +25,19 @@ class MainIDCardViewController: BaseViewController<MainIDCardView, MainIDCardVie
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setupViewModel()
         setupPageController()
         setupPageControl()
         setupButton()
         setupToast()
+        
     }
     
+    func setupViewModel() {
+        profileVC.viewModel = ProfileViewModel.instance()
+        qrVC.viewModel = QRViewModel.instance()
+        workCommutingVC.viewModel = WorkCommutingViewModel.instance()
+    }
     
     func setupPageController() {
         ViewEmbedder.embed(parent: self, container: myView.pageContainerView , child: pageViewController, previous: nil)

@@ -10,6 +10,10 @@ import Combine
 import UIKit
 
 class ProfileViewModel: ViewModelType {
+    static func instance() -> ProfileViewModel {
+        return ProfileViewModel()
+    }
+    
     let profileModel = ProfileModel()
     let trigger = PassthroughSubject<Void, Never>()
     

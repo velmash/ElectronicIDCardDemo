@@ -6,6 +6,10 @@
 //
 
 class WorkCommutingViewModel: ViewModelType {
+    static func instance() -> WorkCommutingViewModel {
+        return WorkCommutingViewModel()
+    }
+    
     let workCommutingModel = WorkCommutingModel()
     
     struct Input {
