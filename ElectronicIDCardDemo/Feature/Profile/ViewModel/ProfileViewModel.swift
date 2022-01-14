@@ -15,6 +15,7 @@ class ProfileViewModel: ViewModelType {
         let viewLoaded: AnyPublisher<Void, Never>
     }
     
+    //TODO: 전자사원증 뷰에 들어가는 데이터 전체 바인딩
     final class Output {
         @Published var title: String?
     }
