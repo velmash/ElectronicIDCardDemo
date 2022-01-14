@@ -29,6 +29,23 @@ class QRViewController: BaseViewController<QRView, QRViewModel> {
     }
     
     override func pageBinding() {
+        let input = QRViewModel.Input(
+            didTapRestartButton: myView.restartQRButton.tapPublisher
+        )
+        
+        let output = viewModel.transform(input: input)
+        
+        output.$reloadQR
+            .sink { [weak self] _ in
+                guard let self = self else { return }
+                self.myView.restartQRButton.isHidden = true
+                
+                self.remainTime = 3
+                self.roopCount = 3
+                self.countTriggerSubject.send(())
+            }
+            .store(in: &bag)
+        
         // start timer after trriger
         countTriggerSubject
             // 여기에 qr 새로만드는 로직도 추가
@@ -71,27 +88,6 @@ class QRViewController: BaseViewController<QRView, QRViewModel> {
                     self.timer?.invalidate()
                     self.timer = nil
                 }
-            }
-            .store(in: &bag)
-        
-        mvvmTest()
-    }
-    
-    func mvvmTest() {
-        let input = QRViewModel.Input(
-            didTapRestartButton: myView.restartQRButton.tapPublisher
-        )
-        
-        let output = viewModel.transform(input: input)
-        
-        output.$reloadQR
-            .sink { [weak self] _ in
-                guard let self = self else { return }
-                self.myView.restartQRButton.isHidden = true
-                
-                self.remainTime = 3
-                self.roopCount = 3
-                self.countTriggerSubject.send(())
             }
             .store(in: &bag)
     }

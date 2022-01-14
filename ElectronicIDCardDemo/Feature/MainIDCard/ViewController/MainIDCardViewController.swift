@@ -9,6 +9,7 @@ import UIKit
 import CombineCocoa
 
 class MainIDCardViewController: BaseViewController<MainIDCardView, MainIDCardViewModel> {
+    
     private let profileVC = ProfileViewController()
     private let qrVC = QRViewController()
     private let workCommutingVC = WorkCommutingViewController()
@@ -24,15 +25,19 @@ class MainIDCardViewController: BaseViewController<MainIDCardView, MainIDCardVie
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+    }
+    
+    override func pageBinding() {
         setupViewModel()
         setupPageController()
         setupPageControl()
         setupButton()
         setupToast()
-        
     }
-    
+}
+
+// MARK: - VC Function
+extension MainIDCardViewController {
     func setupViewModel() {
         profileVC.viewModel = ProfileViewModel.instance()
         qrVC.viewModel = QRViewModel.instance()
@@ -69,6 +74,7 @@ class MainIDCardViewController: BaseViewController<MainIDCardView, MainIDCardVie
     }
 }
 
+// MARK: - UIPageViewControllerDelegate
 extension MainIDCardViewController: UIPageViewControllerDelegate {
     func pageViewController(_ pageViewController: UIPageViewController, didFinishAnimating finished: Bool, previousViewControllers: [UIViewController], transitionCompleted completed: Bool) {
         guard completed else { return }
