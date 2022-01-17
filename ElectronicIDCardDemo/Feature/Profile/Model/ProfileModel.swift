@@ -15,6 +15,6 @@ class ProfileModel {
     }
     
     func getPhoto() -> UIImage? {
-        return UIImage(named: "Ggachi")
+        return UIImage(named: "swift-og")
     }
 }

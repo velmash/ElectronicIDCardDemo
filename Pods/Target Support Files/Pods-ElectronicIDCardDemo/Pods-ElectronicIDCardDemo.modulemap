@@ -1,0 +1,6 @@
+framework module Pods_ElectronicIDCardDemo {
+  umbrella header "Pods-ElectronicIDCardDemo-umbrella.h"
+
+  export *
+  module * { export * }
+}

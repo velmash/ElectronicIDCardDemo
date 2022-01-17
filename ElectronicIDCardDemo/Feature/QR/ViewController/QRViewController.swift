@@ -25,9 +25,6 @@ class QRViewController: BaseViewController<QRView, QRViewModel> {
         super.viewDidLoad()
         
         viewModel.timerTrigger.send(())
-        
-        // initial trigger
-//        countTriggerSubject.send(())
     }
     
     override func pageBinding() {

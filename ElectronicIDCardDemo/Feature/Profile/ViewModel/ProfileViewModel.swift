@@ -24,7 +24,7 @@ class ProfileViewModel: ViewModelType {
         @Published var title: String?
         @Published var companyMark: UIImage?
     }
-    
+
     func transform(input: Input) -> Output {
         let output = Output()
         

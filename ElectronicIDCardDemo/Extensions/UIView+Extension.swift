@@ -29,7 +29,7 @@ extension UIView {
         // 서버에서 사진 받아오는 데이터로 return
         // 현재는 임시
         return UIImageView().then {
-            $0.image = UIImage(named: "swift-og")
+            $0.image = UIImage(named: "Ggachi")
             $0.contentMode = .scaleAspectFit
         }
     }
